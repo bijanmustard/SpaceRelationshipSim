@@ -7,6 +7,7 @@ public class Player_Movement : MonoBehaviour
     public float moveSpeed = 5f;
 
     public Rigidbody2D rb;
+    private Animator animator;
 
 
     Vector2 movement;
@@ -16,6 +17,10 @@ public class Player_Movement : MonoBehaviour
 
 
 
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -37,17 +42,17 @@ public class Player_Movement : MonoBehaviour
 
             lookDirection = movement.normalized;
             prevLookDirection = lookDirection;
-            float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+            float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg + 90f;
             rb.rotation = angle;
-
+            animator.SetTrigger("Walk");
 
 
         }
         else
         {
-            float angle = Mathf.Atan2(prevLookDirection.y, prevLookDirection.x) * Mathf.Rad2Deg - 90f;
+            float angle = Mathf.Atan2(prevLookDirection.y, prevLookDirection.x) * Mathf.Rad2Deg + 90f;
             rb.rotation = angle;
-
+            animator.SetTrigger("Idle");
         }
 
 
