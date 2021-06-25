@@ -4,13 +4,11 @@ Love
 War
 What is it good for?
 
-A great war is being waged throughout the galaxy, between the [X and Y].
+Game Start Text
+
+A great war is being waged throughout the galaxy, between the X and Y sectors of the galaxy.
 You arrive at the Intergalatic Space Station looking for the bar,
 hoping it will take the edge off the situation, when suddenly you're approached by Dax.
-
-Day 1
-
-Scene 1
 
 Dax: Hello little eclipse, you seem to be lost.
 
@@ -18,9 +16,11 @@ Dax: Hello little eclipse, you seem to be lost.
 2A. {I'm only lost because you eclipsed my vision with your beauty ;)}
 3A. {Your sense of style is lost and I only wish you were an eclipse right now. Away!} - possible death scenario
 
+
+Dax Responses
 1a. {The ISS is quite vast! Come, I shall accompany you there!} - scene 2, Bar
 2a. {(ecstatic) So forward! Come and join me at the bar! I shall buy you a drink.} - scene 2, Bar
-3a. {(sad) With how things are going in the war, I may very well permanently eclipse soon.} - Map
+3a. {(sad) With how things are going in the war, I may very well permanently eclipse soon.} - Map, Dax's Death
 
 
 Scene 2, Bar
@@ -37,9 +37,10 @@ I must ensure I'm deployed in a different sector in tomorrow's battle.
 2B. {Can I be deployed in your sector? ;)}
 3B. {The bartender's your enemy! Kill them here!}
 
+Dax Responses
 1b. {Yep, graduated from Drury Space Academy's IT program.} - continue dialog
 2b. {Yes if that's an innuendo, no if you mean the battlefield.} - continue dialog
-3b. {(sad) You must be an offspring of those who started this war.} - Dax walks away, Map
+3b. {(sad) You must be an offspring of those who started this war.} - Dax walks away, Map, Dax's Death
 
 Dax: If you'd like I could teach you the basics of manipulating warp drives 
 to allow accurate and safe relocation of your coordinates 
@@ -49,6 +50,7 @@ to any location you desire within 500 solar systems!
 2C. {Anywhere my coordinates can intersect with your coordinates would be most desirable. ;)}
 3C. {Psh, only 500 solar systems?! Ever heard of hyper drives?}
 
+Dax Responses
 1c. {My basic equipment is back in my room, let us not waste another second!}
 2c. {That could either be potentially fatal or a lot of fun! Let us find out!}
 3c. {Hyper drives are entirely too energy inefficient and much riskier for warping. I shall explain in greater detail in
@@ -56,7 +58,11 @@ my room!}
 
 All options lead to the end of the day.
 
-News Reports Dax's death if either option 3a or 3b is answered.
+(News Reports Dax's death if either option 3a or 3b is answered.)
+
+Newscaster: Sector X feels a crippling loss today, with their Chief of Technology, Dax, reported dead in a battle this 
+evening. Sector Y's missile was never intercepted and collided with Dax's command ship. Dax's gift for 
+relocating warp locations was clearly not in effect here. What could have caused Dax to be so distracted?
 
 
 
