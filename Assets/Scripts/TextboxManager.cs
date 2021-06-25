@@ -69,7 +69,7 @@ public class TextboxManager : MonoBehaviour
                 yield return new WaitForSeconds(speed / 5f);
             }
             //wait sentence break
-            yield return new 
+            yield return null;
         }
         yield break;
        
