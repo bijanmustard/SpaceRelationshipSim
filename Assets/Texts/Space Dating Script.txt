@@ -1,0 +1,70 @@
+Space Dating Simulator Script
+
+Love 
+War
+What is it good for?
+
+A great war is being waged throughout the galaxy, between the [X and Y].
+You arrive at the Intergalatic Space Station looking for the bar,
+hoping it will take the edge off the situation, when suddenly you're approached by Dax.
+
+Day 1
+
+Scene 1
+
+Dax: Hello little eclipse, you seem to be lost.
+
+1A. {I was looking for the bar}
+2A. {I'm only lost because you eclipsed my vision with your beauty ;)}
+3A. {Your sense of style is lost and I only wish you were an eclipse right now. Away!} - possible death scenario
+
+1a. {The ISS is quite vast! Come, I shall accompany you there!} - scene 2, Bar
+2a. {(ecstatic) So forward! Come and join me at the bar! I shall buy you a drink.} - scene 2, Bar
+3a. {(sad) With how things are going in the war, I may very well permanently eclipse soon.} - Map
+
+
+Scene 2, Bar
+
+Dax leads you to the bar. With all of the amenities offered at the ISS, it's no wonder factions from both sides
+of the war enjoy each other's company here. Dax greets the bartender with a smile places the order,
+and the two exchange heartfelt words, the bartender hands Dax the drinks then walks away with 
+tears streaming down their face. Dax turns to you grimly.
+
+Dax: This war has taken much from all of us. Our dear bartender lost their offspring last week. 
+I must ensure I'm deployed in a different sector in tomorrow's battle.
+
+1B. {Do you work in military IT?}
+2B. {Can I be deployed in your sector? ;)}
+3B. {The bartender's your enemy! Kill them here!}
+
+1b. {Yep, graduated from Drury Space Academy's IT program.} - continue dialog
+2b. {Yes if that's an innuendo, no if you mean the battlefield.} - continue dialog
+3b. {(sad) You must be an offspring of those who started this war.} - Dax walks away, Map
+
+Dax: If you'd like I could teach you the basics of manipulating warp drives 
+to allow accurate and safe relocation of your coordinates 
+to any location you desire within 500 solar systems!
+
+1C. {You had me at "If"}
+2C. {Anywhere my coordinates can intersect with your coordinates would be most desirable. ;)}
+3C. {Psh, only 500 solar systems?! Ever heard of hyper drives?}
+
+1c. {My basic equipment is back in my room, let us not waste another second!}
+2c. {That could either be potentially fatal or a lot of fun! Let us find out!}
+3c. {Hyper drives are entirely too energy inefficient and much riskier for warping. I shall explain in greater detail in
+my room!}
+
+All options lead to the end of the day.
+
+News Reports Dax's death if either option 3a or 3b is answered.
+
+
+
+
+
+
+
+
+
+
+
