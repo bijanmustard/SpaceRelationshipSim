@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class DummyDialogue : Dialogue
 {
-    public override void DEvent0()
+    protected override void DEvent0()
     {
-        
-        TextboxManager.Instance.SetLine(0);
+        TextboxManager.Instance.SetLine(8);
+    }
+
+    protected override void DEvent1()
+    {
+        TextboxManager.Instance.SetLine(11);
     }
 }
