@@ -12,7 +12,7 @@ public class DummyNPC : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !TextboxManager.Instance.IsRunning)
         {
             StartDialogue();
         }
