@@ -14,11 +14,6 @@ public class Dialogue : MonoBehaviour
     [SerializeField]
     public TextAsset dialogueScript;
 
-    //StartDialogue is called to start the dialogue event.
-    public void StartDialogue()
-    {
-        TextboxManager.Instance.StartDialogue(this);
-    }
 
     //Events
     public virtual void DEvent0() { Debug.Log("DEvent0"); }

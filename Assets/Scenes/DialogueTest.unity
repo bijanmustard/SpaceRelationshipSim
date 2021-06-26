@@ -620,8 +620,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1442728425}
-  - component: {fileID: 1442728424}
   - component: {fileID: 1442728426}
+  - component: {fileID: 1442728424}
   m_Layer: 0
   m_Name: NPCEvent
   m_TagString: Untagged
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1442728423}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48e5e034478d0f54484abadc2a4e47e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d073dff4cc83e141b9f2ae3953c78ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueScript: {fileID: 4900000, guid: 6cfadef0f4b342146885782b63d4bfc1, type: 3}
