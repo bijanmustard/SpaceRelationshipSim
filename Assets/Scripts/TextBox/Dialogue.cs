@@ -14,6 +14,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField]
     public TextAsset dialogueScript;
 
+
     //Events
     public virtual void DEvent0() { Debug.Log("DEvent0"); }
     public virtual void DEvent1() { Debug.Log("DEvent1"); }
