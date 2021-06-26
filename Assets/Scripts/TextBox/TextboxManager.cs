@@ -28,6 +28,8 @@ public class TextboxManager : MonoBehaviour
     private static TextboxManager instance;
     public static TextboxManager Instance {get {return instance;}}
 
+    protected DialogueCanvas dCanvas;
+
     protected char[] punctuation = { '.', '?', '!' };
 
     Canvas myCanvas;
@@ -40,7 +42,7 @@ public class TextboxManager : MonoBehaviour
     //Button actions
     Action[] buttActs = new Action[4];
 
-    protected Coroutine runIE;
+    public Coroutine runIE;
     protected bool isRunning = false;
     public bool IsRunning { get { return isRunning; } }
 
@@ -64,7 +66,7 @@ public class TextboxManager : MonoBehaviour
     {
         //Singleton
         if (instance != null && instance != this) Destroy(gameObject);
-        else instance = this;
+        else { instance = this; DontDestroyOnLoad(gameObject); }
 
         //Get refs
         if (box == null) box = transform.Find("Box").gameObject;
@@ -74,6 +76,7 @@ public class TextboxManager : MonoBehaviour
         breakImg = box.transform.Find("Break").gameObject;
         buttons = transform.Find("Buttons").GetComponentsInChildren<Button>();
         buttons[0].onClick.AddListener(delegate { TriggerDEvent(0); });
+        dCanvas = FindObjectOfType<DialogueCanvas>();
 
         //Disable textbox
         ToggleTextbox(false);
@@ -90,7 +93,7 @@ public class TextboxManager : MonoBehaviour
             if (runIE != null) StopCoroutine(runIE);
             breakImg.SetActive(false);
             ToggleButtons(false);
-            
+            linePointer = 0;
             texts[0].text = "";
             texts[1].text = "";
         }
@@ -128,6 +131,9 @@ public class TextboxManager : MonoBehaviour
         if (!isRunning) runIE = StartCoroutine(RunScript());
     }
 
+
+    //<><> EVENT FUNCTIONS <><>
+
     // SetLine is called by events to set the linePointer.
     public void SetLine(int line)
     {
@@ -136,6 +142,11 @@ public class TextboxManager : MonoBehaviour
 
     // EndOption is called in Dialogue to end the optionWait bool
     public void EndOptionWait() { waitForOption = false;}
+
+    //<><><><><><><><><><><><><>
+
+
+
 
     //CheckOptions checks if the input line is an options line. Displays options if true.
     protected bool CheckOptions(string line)
@@ -196,8 +207,20 @@ public class TextboxManager : MonoBehaviour
                 int ev = (int)Char.GetNumericValue(chars[3]);
                 curDialogue.Event(ev);
             }
+
             //6. Force exit
             else if (chars[2] == 'x') isExit = true;
+
+            //7. Change dCanvas expression
+            else if (chars[2] == 'd')
+            {
+                if(dCanvas.isCanvas)
+                {
+                    //Extract idx
+                    int idx = (int)Char.GetNumericValue(chars[3]);
+                    dCanvas.ChangeExpression(idx);
+                }
+            }
 
             //Return true if was meta
             return true;
@@ -263,8 +286,9 @@ public class TextboxManager : MonoBehaviour
     {
         isRunning = true;
         int charCount = 0;
+        isExit = false;
         bool endDialogue = false;
-
+        
         //1. Load text
         while (!endDialogue)
         {
@@ -288,7 +312,7 @@ public class TextboxManager : MonoBehaviour
                         //If word won't fit in textbox, clear textbox
                         if (w.ToCharArray().Length + charCount > MAXCHARS)
                         {
-                            texts[0].text = "";
+                            texts[1].text = "";
                             charCount = 0;
                         }
                         //Add word
@@ -334,6 +358,7 @@ public class TextboxManager : MonoBehaviour
                 {
                     isBreak = false;
                     //clear text
+                    charCount = 0;
                     texts[1].text = "";
                     breakImg.SetActive(false);
                 }
@@ -365,7 +390,9 @@ public class TextboxManager : MonoBehaviour
         isRunning = false;
         //Close textbox
         ToggleTextbox(false);
-        yield break;
+        //Disable dialogue canvas if applicable
+        if (dCanvas.isCanvas) dCanvas.DisableCanvas();
+        yield return null;
 
     }
 }

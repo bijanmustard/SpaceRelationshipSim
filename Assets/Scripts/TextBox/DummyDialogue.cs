@@ -11,6 +11,6 @@ public class DummyDialogue : Dialogue
 
     protected override void DEvent1()
     {
-        TextboxManager.Instance.SetLine(12);
+        TextboxManager.Instance.SetLine(18);
     }
 }
