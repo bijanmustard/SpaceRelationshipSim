@@ -11,7 +11,7 @@ public class NPC_Interaction : MonoBehaviour
 
     //Dialogue Vars
     Dialogue myDialogue;
-    DiaSprites mySprites;
+    public DiaSprites mySprites;
     public bool isDialogue = false;
 
 
