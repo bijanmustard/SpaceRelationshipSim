@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene test movement/Area 2 Test.unity
     guid: 91eabd87afe879a44be034a26b340675
+  - enabled: 1
+    path: Assets/Scenes/Bar.unity
+    guid: 2eb1649c21bde234cbba3392853600b0
+  - enabled: 1
+    path: Assets/Scenes/Plaza.unity
+    guid: 796f0164af2e1954da2cfa57815914fc
+  - enabled: 1
+    path: Assets/Scenes/Hotel.unity
+    guid: 0ef0cb5dd8975db499e608f6d13c82ac
   m_configObjects: {}
