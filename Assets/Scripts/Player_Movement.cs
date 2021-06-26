@@ -13,9 +13,21 @@ public class Player_Movement : MonoBehaviour
 
     private Vector2 lookDirection;
     private Vector2 prevLookDirection;
+    
 
 
 
+    private void Start()
+    {
+        //Note: This is just to prevent initially spawning at (0,0)
+
+        if (Starting_Position_Value.transitionNumber != 0)
+        {
+            transform.position = Starting_Position_Value.initialValue;
+
+        }
+
+    }
 
     void Update()
     {
