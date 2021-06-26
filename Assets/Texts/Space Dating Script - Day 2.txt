@@ -1,0 +1,82 @@
+Day 2
+
+Map room: Bryce, Dax (if not killed)
+
+Dax: 
+
+Bryce: (neutral) What in the pollination do we have here? You don't look like much of a soldier.
+
+1A. {You're right, my sector hasn't issued me a weapon yet.}
+2A. {I'm a lover, not a fighter. A pollinator, not a biter.}
+3A. {There are other ways to fight in a war than with just a weapon}
+
+Bryce Responses
+1a. {(irritated) If you're with that Sector Y filth, you best leave me alone until tomorrow!}
+2a. {(neutral) I can relate! But with Sector X giving me this gun, (irritated) I bite just fine now!}
+3a. {(sad) You mean with pwopaganda and dipwomacy and - (irritated) Nonsense!
+a plasma charged weapon is all I need!
+
+Bryce: The commander says I'm looking at a promotion after next battle so I gotta keep my focus.
+What do you do here to relax?
+
+1B. {Drink my troubles away! (invite Bryce to the bar)} go to bar
+2B. {Embarrass myself! (invite Bryce to Karaoke)} go to Karaoke
+3B. {Inspire myself for battle! (invite Bryce to the pavillion)} go to Pavillion
+
+Scene changes to location.
+
+Bar
+
+Bryce: This was a good choice. A drink always helps me relax before battle.
+...(new dialogue box)
+...(new dialogue box)
+But... (new dialogue box)
+this war... (new dialogue box)
+(sad) is it really necessary?}
+
+1BB. {War is never necessary.}
+2BB. {For those in power it is.}
+3BB. {Of course! Get that adrenaline! Charge into battle! PEW PEW PEW!}
+
+Bryce Responses
+1bb. {(sad) There will always be others who will require it. (Neutral) That's why I'm going to fight and do my best} 
++ 1 Bryce Outcome
+2bb. {(irritated) That's why I'm going to fight my way up the ranks!} - +1 Bryce Outcome
+3bb. {(inspired) You're right. That's my role as a soldier! (neutral) I'm going to give it my best tomorrow} - +1 Bryce Outcome
+
+
+Karaoke
+
+Bryce manages to withold a few chuckles as you sing an "impressive" cover to a viral Internet song. (time+0:04)
+Before you finish the last lyric, Bryce grabs the microphone from you and already has the machine change songs.
+Bryce begins making inarticulate sounds in a rhythm to the bass of the song. The song chosen has no lyrics. (time+0:03)
+Several more songs and laughs are enjoyed. (time+1:00)
+
+Bryce: (surprised) That was actually a lot of fun! (neutral) Win tomorrow's battle so we can do it again!
+
+Pavillion
+
+Hologram text (flashes above): "Fight!" 
+"The Galactic needs you!" 
+"Poggers" 
+"This war was started by Sector Z to assume totalitarian control over the Galactic Federation." - message programmed by Dax
+
+Bryce: (neutral) I spent many sleepless nights training to be the best soldier I could be. After what they did, I
+had to become better.
+(irritated) I have to fight!
+
+1A. {Bryce... what happened?!}
+2A. {I believe in you! Let's ensure your ready by going to the recharge chamber! (invite to Recharge Chamber)}
+3A. {Destroy them all in the battle tomorrow! BLAM KACHOW!} +1 Bryce Outcome
+
+Bryce Responses
+1a. {(sad) my... family...} - Bryce walks away but can be consoled in lounge
+2a. {(neutral) Great idea! Tomorrow... I'll be unstoppable!} - +2 Bryce Outcome
+3a. {(irritated) They'll pay for what they did, tomorrow I'll be unstoppable!} +2 Bryce Outcome
+
+
+
+
+
+
+
