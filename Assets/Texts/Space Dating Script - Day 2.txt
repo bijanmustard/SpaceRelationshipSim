@@ -1,8 +1,6 @@
 Day 2
 
-Map room: Bryce, Dax (if not killed)
-
-Dax: 
+Present in ISS: Bryce, Dax (if not killed) day 1
 
 Bryce: (neutral) What in the pollination do we have here? You don't look like much of a soldier.
 
@@ -66,8 +64,9 @@ had to become better.
 (irritated) I have to fight!
 
 1A. {Bryce... what happened?!}
-2A. {I believe in you! Let's ensure your ready by going to the recharge chamber! (invite to Recharge Chamber)}
-3A. {Destroy them all in the battle tomorrow! BLAM KACHOW!} +1 Bryce Outcome
+2A. {I believe in you! Let's ensure your ready by going to the recharge chamber! (invite to Recharge Chamber)} 
++2 Bryce Outcome
+3A. {Destroy them all in the battle tomorrow! BLAM KACHOW!} +2 Bryce Outcome
 
 Bryce Responses
 1a. {(sad) my... family...} - Bryce walks away but can be consoled in lounge
@@ -75,8 +74,15 @@ Bryce Responses
 3a. {(irritated) They'll pay for what they did, tomorrow I'll be unstoppable!} +2 Bryce Outcome
 
 
+If the Bryce Outcome is 2 or more.
 
+Newscaster: Today, Sector Y had a phenomenal victory! The casualties were high, but no one of
+particular importance was lost today! After securing Sector X's primary command station and knocking out their missile 
+defense system, this war may soon be over! Sector Y's General commends the ISS for allowing our galaxy's soldiers
+a great place to recharge and believes it's the reason for their great success.
 
+If the Bryce Outcome is 0
 
+Newscaster: In a grueling battle between Sector X and Y, very little progress was made today. No casualties were lost.
 
 
