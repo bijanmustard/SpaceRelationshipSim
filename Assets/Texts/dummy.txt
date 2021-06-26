@@ -2,6 +2,7 @@
 Hello! <&s3> Welcome to Space Burger!
 <&w>
 <&s1>
-How may I help you? <&e1>
+How may I help you? 
+{<o1One space burger, please.> <o2I need to speak to your manager.>}
 
 

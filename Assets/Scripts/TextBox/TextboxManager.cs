@@ -21,6 +21,9 @@ public class TextboxManager : MonoBehaviour
 {
 
     //Vars & Refs
+    private static TextboxManager instance;
+    public static TextboxManager Instance {get {return instance;}}
+
     Canvas myCanvas;
     public GameObject box;
     protected RectTransform boxRect;
@@ -40,11 +43,18 @@ public class TextboxManager : MonoBehaviour
 
     private void Awake()
     {
+        //Singleton
+        if (instance != null && instance != this) Destroy(gameObject);
+        else instance = this;
+
+        //Get refs
         if (box == null) box = transform.GetChild(0).gameObject;
         boxRect = box.GetComponent<RectTransform>();
         myCanvas = GetComponent<Canvas>();
         texts = box.GetComponentsInChildren<Text>();
         breakImg = box.transform.Find("Break").gameObject;
+
+        //Disable textbox
         ToggleTextbox(false);
     }
 
@@ -75,7 +85,7 @@ public class TextboxManager : MonoBehaviour
     }
 
     // StartDialoge is called by an NPC to trigger a dialogue.
-    public void StartDialogue(ref Dialogue myDia)
+    public void StartDialogue(Dialogue myDia)
     {
         //1. Initialize
         InitDialogue(ref myDia);
@@ -205,7 +215,7 @@ public class TextboxManager : MonoBehaviour
                 while (isBreak)
                 {
                     //Wait for input
-                    if (Input.GetKeyDown(KeyCode.F))
+                    if (Input.GetButtonDown("Submit"))
                     {
                         isBreak = false;
                         //clear text
@@ -216,8 +226,25 @@ public class TextboxManager : MonoBehaviour
                 }
             }   
         }
+        // End break
+        isBreak = true;
+        breakImg.SetActive(true);
+        while (isBreak)
+        {
+            //Wait for input
+            if (Input.GetButtonDown("Submit"))
+            {
+                isBreak = false;
+                //clear text
+                texts[1].text = "";
+                breakImg.SetActive(false);
+            }
+            else yield return null;
+        }
         Debug.Log("Text done!");
         isRunning = false;
+        //Close textbox
+        ToggleTextbox(false);
         yield break;
        
 
