@@ -51,7 +51,7 @@ public class TextboxManager : MonoBehaviour
     protected float speed = 3f;
     public float speedMultiplier = 2f;  //for holding down space
     public float sentenceBreak = 0.2f;
-    const int MAXCHARS = 240;
+    const int MAXCHARS = 215;
 
     protected bool isBreak = false;
     protected bool isExit = false;
