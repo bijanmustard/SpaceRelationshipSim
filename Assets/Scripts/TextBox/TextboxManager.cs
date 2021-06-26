@@ -18,7 +18,8 @@ using UnityEditor.Events;
  * <&s(int)> -- set read speed
  * <&x> -- Exit text event
  * {<1..>;<2..>;..<n..>} -- Options (limit of four)
- * <&e(int)> -- change expression (for initimate dialogue)
+ * <&d(int)> -- change expression (for initimate dialogue)
+ * <&e(int)> -- call (int) event
  */
 
 public class TextboxManager : MonoBehaviour
@@ -180,6 +181,9 @@ public class TextboxManager : MonoBehaviour
                 string myName = myWord;
                 myName = myName.Trim('>');
                 myName = myName.Remove(0, 3);
+                //Replace spaces
+                myName = myName.Replace("&'_'", " ");
+                Debug.Log(myName);
                 texts[0].text = myName;
             }
 

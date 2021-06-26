@@ -1,4 +1,4 @@
-<&tHexagon Harry>
+<&tHexagon&'_'Harry>
 Hello! I am a hexagon. Geometrically speaking, I ain't no square!
 <&w>
 Can I ask you a question?
