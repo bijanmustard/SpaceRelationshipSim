@@ -6,11 +6,11 @@ public class DummyDialogue : Dialogue
 {
     protected override void DEvent0()
     {
-        TextboxManager.Instance.SetLine(8);
+        TextboxManager.Instance.SetLine(9);
     }
 
     protected override void DEvent1()
     {
-        TextboxManager.Instance.SetLine(11);
+        TextboxManager.Instance.SetLine(12);
     }
 }

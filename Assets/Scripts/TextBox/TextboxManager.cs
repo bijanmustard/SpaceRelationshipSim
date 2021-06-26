@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-//using UnityEngine.Events;
 using UnityEditor.Events;
 
 /*
@@ -16,7 +15,10 @@ using UnityEditor.Events;
  * METATEXT GLOSSARY
  * <&t(string)> -- Update name text
  * <&w> -- Trigger break
- * <&sp(int)> -- set read speed
+ * <&s(int)> -- set read speed
+ * <&x> -- Exit text event
+ * {<1..>;<2..>;..<n..>} -- Options (limit of four)
+ * <&e(int)> -- change expression (for initimate dialogue)
  */
 
 public class TextboxManager : MonoBehaviour
@@ -25,6 +27,8 @@ public class TextboxManager : MonoBehaviour
     //Vars & Refs
     private static TextboxManager instance;
     public static TextboxManager Instance {get {return instance;}}
+
+    protected char[] punctuation = { '.', '?', '!' };
 
     Canvas myCanvas;
     public GameObject box;
@@ -38,14 +42,16 @@ public class TextboxManager : MonoBehaviour
 
     protected Coroutine runIE;
     protected bool isRunning = false;
+    public bool IsRunning { get { return isRunning; } }
 
     public Dialogue curDialogue;
     protected TextAsset asset;
     string[] lines;
 
-    public float speed = 1f;
+    protected float speed = 3f;
+    public float speedMultiplier = 2f;  //for holding down space
     public float sentenceBreak = 0.2f;
-    const int MAXCHARS = 240;
+    const int MAXCHARS = 215;
 
     protected bool isBreak = false;
     protected bool isExit = false;
@@ -84,6 +90,9 @@ public class TextboxManager : MonoBehaviour
             if (runIE != null) StopCoroutine(runIE);
             breakImg.SetActive(false);
             ToggleButtons(false);
+            
+            texts[0].text = "";
+            texts[1].text = "";
         }
         
     }
@@ -206,13 +215,13 @@ public class TextboxManager : MonoBehaviour
             //Parse as char array
             char[] c = ops[i].ToCharArray();
             //2. check event code and add listener
-            int ev = (int)Char.GetNumericValue(c[2]);
+            int ev = (int)Char.GetNumericValue(c[1]);
             buttActs[i] = delegate { TriggerDEvent(ev); };
 
             //3. Get text from string
             string opt = ops[i];
             opt = opt.Trim('>');
-            opt = opt.Remove(0, 3);
+            opt = opt.Remove(0, 2);
             //4. set to button text
             buttons[i].GetComponentInChildren<Text>().text = opt;
             //5. enable button
@@ -269,6 +278,7 @@ public class TextboxManager : MonoBehaviour
                 string[] words = s.Split(' ');
                 foreach (string w in words)
                 {
+                    bool eos = false;
                     if (isExit) break;
 
                     //If word is not meta tag...
@@ -284,14 +294,24 @@ public class TextboxManager : MonoBehaviour
                         //Add word
                         foreach (char c in w)
                         {
+                            //add char and increment char count
                             texts[1].text += c.ToString();
                             charCount++;
-                            yield return new WaitForSeconds(1 / (speed * 10f));
+                            //wait for speed
+                            speedMultiplier = (Input.GetKey(KeyCode.Space) ? 0.5f : 1);
+                            yield return new WaitForSeconds(5 / (speed * 50f) * speedMultiplier);
+                            //if char is last and is punctuation, set EOS flag
+                            if (c == w[w.Length - 1] && (Array.Exists(punctuation, p => p == c)
+                                || w == words[words.Length - 1])) eos = true;
                         }
-
-                        //wait word break
+                        //add space between words
                         texts[1].text += " ";
-                        yield return new WaitForSeconds(sentenceBreak);
+                        charCount++;
+                        //If not EOS
+                        if (!eos) yield return new WaitForSeconds(5 / (speed * 50f) * speedMultiplier);
+                        else yield return new WaitForSeconds(sentenceBreak);
+                        
+
                     }
                 }
             }
@@ -346,7 +366,6 @@ public class TextboxManager : MonoBehaviour
         //Close textbox
         ToggleTextbox(false);
         yield break;
-       
 
     }
 }
