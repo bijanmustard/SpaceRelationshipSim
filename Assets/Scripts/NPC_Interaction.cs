@@ -28,14 +28,14 @@ public class NPC_Interaction : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             exclamationMark.SetActive(true);
-        }
 
-        if (Input.GetKeyDown("q"))
-        {
-            Game_Manager.NPCTimeInteraction_Add();
-            //Trigger Event
-            StartDialogue();
-            
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Game_Manager.NPCTimeInteraction_Add();
+                //Trigger Event
+                StartDialogue();
+
+            }
         }
 
     }

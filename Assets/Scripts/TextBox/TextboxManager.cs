@@ -34,11 +34,16 @@ public class TextboxManager : MonoBehaviour
     protected char[] punctuation = { '.', '?', '!' };
 
     Canvas myCanvas;
-    public GameObject box;
-    protected RectTransform boxRect;
+    GameObject box;
+    RectTransform boxRect;
     GameObject breakImg;
     protected Text[] texts;
     protected Button[] buttons;
+    protected Player_Movement playerMove;
+    protected AudioSource audio;
+
+    //Text sounds
+    public AudioClip charSound;
 
     //Button actions
     Action[] buttActs = new Action[4];
@@ -78,6 +83,8 @@ public class TextboxManager : MonoBehaviour
         buttons = transform.Find("Buttons").GetComponentsInChildren<Button>();
         buttons[0].onClick.AddListener(delegate { TriggerDEvent(0); });
         dCanvas = FindObjectOfType<DialogueCanvas>();
+        playerMove = FindObjectOfType<Player_Movement>();
+        audio = GetComponent<AudioSource>();
 
         //Disable textbox
         ToggleTextbox(false);
@@ -124,6 +131,10 @@ public class TextboxManager : MonoBehaviour
     // StartDialoge is called by an NPC to trigger a dialogue.
     public void StartDialogue(Dialogue myDia)
     {
+        //0. Lock player movement
+        if (playerMove == null) playerMove = FindObjectOfType<Player_Movement>();
+        playerMove.LockMovement(true);
+
         //1. Initialize
         InitDialogue(ref myDia);
         //2. Open text box
@@ -292,10 +303,14 @@ public class TextboxManager : MonoBehaviour
         int charCount = 0;
         isExit = false;
         bool endDialogue = false;
-        
+
+        //Add audio
+        if (charSound != null) audio.clip = charSound;
+
         //1. Load text
         while (!endDialogue)
         {
+            
             //Get next line 
             string s = lines[linePointer];
             //If next line isn't an options line...
@@ -325,6 +340,8 @@ public class TextboxManager : MonoBehaviour
                             //add char and increment char count
                             texts[1].text += c.ToString();
                             charCount++;
+                            //play char sound
+                            audio.Play();
                             //wait for speed
                             speedMultiplier = (Input.GetKey(KeyCode.Space) ? 0.5f : 1);
                             yield return new WaitForSeconds(5 / (speed * 50f) * speedMultiplier);
@@ -354,7 +371,11 @@ public class TextboxManager : MonoBehaviour
             }
 
             // if is break, wait
-            if (isBreak) breakImg.SetActive(true);
+            if (isBreak)
+            {
+                breakImg.SetActive(true);
+                
+            }
             while (isBreak)
             {
                 //Wait for input
@@ -378,6 +399,7 @@ public class TextboxManager : MonoBehaviour
         // End break
         isBreak = true;
         breakImg.SetActive(true);
+       
         while (isBreak)
         {
             //Wait for input
@@ -391,12 +413,22 @@ public class TextboxManager : MonoBehaviour
             else yield return null;
         }
         Debug.Log("Text done!");
-        isRunning = false;
-        //Close textbox
-        ToggleTextbox(false);
-        //Disable dialogue canvas if applicable
-        if (dCanvas.isCanvas) dCanvas.DisableCanvas();
+        OnTextboxExit();
         yield return null;
 
+    }
+
+    //OnTextboxExit is called when the final break is made to close the textbox.
+    protected void OnTextboxExit()
+    {
+        //1. Set isRunning to false
+        isRunning = false;
+        //2. Close textbox
+        ToggleTextbox(false);
+        //3. Disable dialogue canvas if applicable
+        if (dCanvas.isCanvas) dCanvas.DisableCanvas();
+        //4. unlock player movement
+        playerMove.LockMovement(false);
+        
     }
 }

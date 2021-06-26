@@ -13,9 +13,8 @@ public class Player_Movement : MonoBehaviour
 
     private Vector2 lookDirection;
     private Vector2 prevLookDirection;
-    
 
-
+    private bool locked = false;
 
     private void Start()
     {
@@ -32,41 +31,42 @@ public class Player_Movement : MonoBehaviour
 
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-
-
+        if (!locked)
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+        }
     }
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-
-
-        if (movement.x != 0 || movement.y != 0)
+        if (!locked)
         {
-
-            lookDirection = movement.normalized;
-            prevLookDirection = lookDirection;
-            float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
-            rb.rotation = angle;
-            animator.SetTrigger("Walk");
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
 
+
+            if (movement.x != 0 || movement.y != 0)
+            {
+
+                lookDirection = movement.normalized;
+                prevLookDirection = lookDirection;
+                float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+                rb.rotation = angle;
+                animator.SetTrigger("Walk");
+
+
+            }
+            else
+            {
+                float angle = Mathf.Atan2(prevLookDirection.y, prevLookDirection.x) * Mathf.Rad2Deg - 90f;
+                rb.rotation = angle;
+                animator.SetTrigger("Idle");
+            }
         }
-        else
-        {
-            float angle = Mathf.Atan2(prevLookDirection.y, prevLookDirection.x) * Mathf.Rad2Deg - 90f;
-            rb.rotation = angle;
-            animator.SetTrigger("Idle");
-        }
-
-
-
-
-
-
     }
+
+        //LockMovement is called to toggle whether player can move or not.
+        public void LockMovement(bool b) { locked = b; }
+
 }
