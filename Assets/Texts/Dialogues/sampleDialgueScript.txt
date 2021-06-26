@@ -1,0 +1,12 @@
+<&tHexagon Harry>
+Hello! I am a hexagon. Geometrically speaking, I ain't no square!
+<&w>
+Can I ask you a question?
+{<0Yes>;<1No>;<5Maybe?>}
+============
+Do you like Pineapple pizza with cheese?
+<&s1>
+<&d1>
+...No? Alright. Just had to know.
+<&x>
+
