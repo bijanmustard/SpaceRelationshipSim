@@ -27,9 +27,9 @@ public class Game_Manager : MonoBehaviour
     private void Start()
     {
 
-        time.text = currentHour.ToString() + ":" + currentMinute.ToString("00") + " a.m";
+        time.text = currentHour.ToString() + ":" + currentMinute.ToString("00");
         day.text = "Day " + dayCount.ToString();
-        canvas.enabled = false;
+        
     }
 
     private void Update()
@@ -50,7 +50,7 @@ public class Game_Manager : MonoBehaviour
             currentMinute -= currentMinute;
         }
 
-        time.text = currentHour.ToString() + ":" + currentMinute.ToString("00") + " a.m";
+        time.text = currentHour.ToString() + ":" + currentMinute.ToString("00");
         if(currentTimeLeft < 1)
         {
             currentTimeLeft = maxTimeLeft;

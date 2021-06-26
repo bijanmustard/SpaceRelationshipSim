@@ -5,6 +5,8 @@ using UnityEngine;
 public class DummyNPC : MonoBehaviour
 {
     public Dialogue dia;
+    public DiaSprites myDIASPR;
+
     private void Awake()
     {
         dia = GetComponent<Dialogue>();
