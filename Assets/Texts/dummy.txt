@@ -2,8 +2,15 @@
 Hello! <&s3> Welcome to Space Burger!
 <&w>
 <&s1>
-<&e0>
 How may I help you? 
-{<o1One space burger, please.>;<o2I need to speak to your manager.>}
+{<o0One space burger, please.>;<o1I need to speak to your manager.>;<o2 It might be the beer talking, but you looking pretty fly.>}
+<><><><>
+Sorry, but we're all out of Space Burgers! Try coming back later.
+<&x>
+<><><><>
+You're speaking to them. What's the issue? 
+<&w>
+Oh... sorry. Nope. Can't help with that. Our employee training book never covered such a thing. 
+<&x>
 
 

@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//using UnityEngine.Events;
+using UnityEditor.Events;
 
 /*
  * Code © Bijan Pourmand
@@ -29,6 +31,11 @@ public class TextboxManager : MonoBehaviour
     protected RectTransform boxRect;
     GameObject breakImg;
     protected Text[] texts;
+    protected Button[] buttons;
+
+    //Button actions
+    Action[] buttActs = new Action[4];
+
     protected Coroutine runIE;
     protected bool isRunning = false;
 
@@ -39,7 +46,10 @@ public class TextboxManager : MonoBehaviour
     public float speed = 1f;
     public float sentenceBreak = 0.2f;
     const int MAXCHARS = 240;
+
     protected bool isBreak = false;
+    protected bool isExit = false;
+    protected bool waitForOption = false;
 
     protected int linePointer = 0;
 
@@ -51,11 +61,13 @@ public class TextboxManager : MonoBehaviour
         else instance = this;
 
         //Get refs
-        if (box == null) box = transform.GetChild(0).gameObject;
+        if (box == null) box = transform.Find("Box").gameObject;
         boxRect = box.GetComponent<RectTransform>();
         myCanvas = GetComponent<Canvas>();
         texts = box.GetComponentsInChildren<Text>();
         breakImg = box.transform.Find("Break").gameObject;
+        buttons = transform.Find("Buttons").GetComponentsInChildren<Button>();
+        buttons[0].onClick.AddListener(delegate { TriggerDEvent(0); });
 
         //Disable textbox
         ToggleTextbox(false);
@@ -71,9 +83,18 @@ public class TextboxManager : MonoBehaviour
         {
             if (runIE != null) StopCoroutine(runIE);
             breakImg.SetActive(false);
+            ToggleButtons(false);
         }
         
     }
+
+    //ToggleButtons enables/disables selection buttons.
+    protected void ToggleButtons(bool tog)
+    {
+        foreach (Button b in buttons)
+            b.gameObject.SetActive(tog);
+    }
+
 
     //InitScript inits the text asset and its variables
     protected void InitDialogue(ref Dialogue cur)
@@ -101,20 +122,42 @@ public class TextboxManager : MonoBehaviour
     // SetLine is called by events to set the linePointer.
     public void SetLine(int line)
     {
-        linePointer = Mathf.Clamp(line, 0, lines.Length);
+        linePointer = Mathf.Clamp(line-1, 0, lines.Length);
+    }
+
+    // EndOption is called in Dialogue to end the optionWait bool
+    public void EndOptionWait() { waitForOption = false;}
+
+    //CheckOptions checks if the input line is an options line. Displays options if true.
+    protected bool CheckOptions(string line)
+    {
+        //else if options...
+         if (line.Contains("{"))
+        {
+            //enable options flag for text IE
+            waitForOption = true;
+            //format line into array
+            string ops = line.TrimStart('{');
+            ops = ops.TrimEnd('}');
+            Debug.Log(ops);
+            string[] options = ops.Split(';');
+            LoadOptions(options);
+            return true;
+        }
+        return false;
     }
 
     //CheckMetaTag checks a string for a meta tag. Performs functions accordingly.
-    protected bool CheckMetaTag(string tag)
+    protected bool CheckMetaTag(string myWord)
     {
         //1. If string starts with meta tag....
-        if (tag.Contains("<&"))
+        if (myWord.Contains("<&"))
         {
-            char[] chars = tag.ToCharArray();
+            char[] chars = myWord.ToCharArray();
             //2. Title Update
             if (chars[2] == 't')
             {
-                string myName = tag;
+                string myName = myWord;
                 myName = myName.Trim('>');
                 myName = myName.Remove(0, 3);
                 texts[0].text = myName;
@@ -124,15 +167,15 @@ public class TextboxManager : MonoBehaviour
             else if (chars[2] == 'w') isBreak = true;
 
             //4. Speed
-            else if(chars[2] == 's')
+            else if (chars[2] == 's')
             {
                 //extract speed int
-                string spd = tag;
+                string spd = myWord;
                 spd = spd.Trim('>');
                 spd = spd.Remove(0, 3);
-                
+
                 //set speed
-                Debug.Log(spd);
+                
                 speed = int.Parse(spd);
 
             }
@@ -140,47 +183,70 @@ public class TextboxManager : MonoBehaviour
             //5. DialogEvents
             else if (chars[2] == 'e')
             {
-                switch (chars[3])
-                {
-                    case '0':
-                        curDialogue.DEvent0();
-                        break;
-                    case '1':
-                        curDialogue.DEvent1();
-                        break;
-                    case '2':
-                        curDialogue.DEvent2();
-                        break;
-                    case '3':
-                        curDialogue.DEvent3();
-                        break;
-                    case '4':
-                        curDialogue.DEvent4();
-                        break;
-                    case '5':
-                        curDialogue.DEvent5();
-                        break;
-                    case '6':
-                        curDialogue.DEvent6();
-                        break;
-                    case '7':
-                        curDialogue.DEvent7();
-                        break;
-                    case '8':
-                        curDialogue.DEvent8();
-                        break;
-                    case '9':
-                        curDialogue.DEvent9();
-                        break;
-
-                }
+                //Call event
+                int ev = (int)Char.GetNumericValue(chars[3]);
+                curDialogue.Event(ev);
             }
-
+            //6. Force exit
+            else if (chars[2] == 'x') isExit = true;
 
             //Return true if was meta
             return true;
         }
+
         return false;
+    }
+
+    //LoadOptions loads the dialogue option buttons with event listeners.
+    protected void LoadOptions(string[] ops)
+    {
+        //1. Get button info
+        for(int i = 0; i < ops.Length; i++)
+        {
+            //Parse as char array
+            char[] c = ops[i].ToCharArray();
+            //2. check event code and add listener
+            int ev = (int)Char.GetNumericValue(c[2]);
+            buttActs[i] = delegate { TriggerDEvent(ev); };
+
+            //3. Get text from string
+            string opt = ops[i];
+            opt = opt.Trim('>');
+            opt = opt.Remove(0, 3);
+            //4. set to button text
+            buttons[i].GetComponentInChildren<Text>().text = opt;
+            //5. enable button
+            buttons[i].gameObject.SetActive(true);
+        }
+    }
+
+    //Button click functions
+    public void Button1Event()
+    {
+        buttActs[0].Invoke();
+    }
+
+    public void Button2Event()
+    {
+        buttActs[1].Invoke();
+    }
+
+    public void Button3Event()
+    {
+        buttActs[2].Invoke();
+    }
+
+    public void Button4Event()
+    {
+        buttActs[3].Invoke();
+    }
+
+
+    //TriggerDEvent is a listner for buttons to call curDialgoue's events.
+    public void TriggerDEvent(int val)
+    {
+        curDialogue.Event(val);
+        
     }
 
     //IE for reading text asset script
@@ -193,34 +259,52 @@ public class TextboxManager : MonoBehaviour
         //1. Load text
         while (!endDialogue)
         {
-                string s = lines[linePointer];
+            //Get next line 
+            string s = lines[linePointer];
+            //If next line isn't an options line...
+            if (!CheckOptions(s))
+            {
+                if (isExit) break;
                 //Split line into words
                 string[] words = s.Split(' ');
-            foreach (string w in words)
-            {
-                //If word is not meta tag...
-                if (!CheckMetaTag(w))
+                foreach (string w in words)
                 {
+                    if (isExit) break;
 
-                    //If word won't fit in textbox, clear textbox
-                    if (w.ToCharArray().Length + charCount > MAXCHARS)
+                    //If word is not meta tag...
+                    if (!CheckMetaTag(w))
                     {
-                        texts[0].text = "";
-                        charCount = 0;
-                    }
-                    //Add word
-                    foreach (char c in w)
-                    {
-                        texts[1].text += c.ToString();
-                        charCount++;
-                        yield return new WaitForSeconds(speed / 10f);
-                    }
 
-                    //wait word break
-                    texts[1].text += " ";
-                    yield return new WaitForSeconds(sentenceBreak);
+                        //If word won't fit in textbox, clear textbox
+                        if (w.ToCharArray().Length + charCount > MAXCHARS)
+                        {
+                            texts[0].text = "";
+                            charCount = 0;
+                        }
+                        //Add word
+                        foreach (char c in w)
+                        {
+                            texts[1].text += c.ToString();
+                            charCount++;
+                            yield return new WaitForSeconds(1 / (speed * 10f));
+                        }
+
+                        //wait word break
+                        texts[1].text += " ";
+                        yield return new WaitForSeconds(sentenceBreak);
+                    }
                 }
             }
+
+            //else, wait for option to be chosen
+            else
+            {
+                while (waitForOption) yield return null;
+                texts[1].text = "";
+                ToggleButtons(false);
+                continue;
+            }
+
             // if is break, wait
             if (isBreak) breakImg.SetActive(true);
             while (isBreak)
