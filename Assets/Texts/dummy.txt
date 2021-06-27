@@ -12,7 +12,7 @@ Okay, one Space Burger coming right up!
 <&tYou>
 *sloppy eating noises*
 <&w>
-*satisfying gulp*
+*satisfying <&p3> gulp*
 <&x>
 <><><><>
 <&d1>

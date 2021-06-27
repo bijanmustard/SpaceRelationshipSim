@@ -68,6 +68,8 @@ public class TextboxManager : MonoBehaviour
     protected int linePointer = 0;
 
     protected Action exitEvent;
+
+    public float pauseDur = 0;
     
 
 
@@ -243,6 +245,12 @@ public class TextboxManager : MonoBehaviour
                 }
             }
 
+            //8. Pause for duration
+            else if (chars[2] == 'p')
+            {
+                pauseDur = (int)Char.GetNumericValue(chars[3]) * 0.2f;
+            }
+
             //Return true if was meta
             return true;
         }
@@ -334,6 +342,12 @@ public class TextboxManager : MonoBehaviour
                     //If word is not meta tag...
                     if (!CheckMetaTag(w))
                     {
+                        //If pause is set, wait for pause
+                        if(pauseDur > 0)
+                        {
+                            yield return new WaitForSeconds(pauseDur);
+                            pauseDur = 0;
+                        }
                         //Used to make the textbox sound play half aws often
                         bool playSound = true;
                         //If word won't fit in textbox, clear textbox
