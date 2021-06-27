@@ -327,7 +327,8 @@ public class TextboxManager : MonoBehaviour
                     //If word is not meta tag...
                     if (!CheckMetaTag(w))
                     {
-
+                        //Used to make the textbox sound play half aws often
+                        bool playSound = true;
                         //If word won't fit in textbox, clear textbox
                         if (w.ToCharArray().Length + charCount > MAXCHARS)
                         {
@@ -341,7 +342,12 @@ public class TextboxManager : MonoBehaviour
                             texts[1].text += c.ToString();
                             charCount++;
                             //play char sound
-                            audio.Play();
+                            if (playSound)
+                            {
+                                audio.Play();
+                                playSound = false;
+                            }
+                            else playSound = true;
                             //wait for speed
                             speedMultiplier = (Input.GetKey(KeyCode.Space) ? 0.5f : 1);
                             yield return new WaitForSeconds(5 / (speed * 50f) * speedMultiplier);

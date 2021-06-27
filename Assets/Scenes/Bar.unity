@@ -3801,6 +3801,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3211702656783437556, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.096
+      objectReference: {fileID: 0}
+    - target: {fileID: 3211702656783437556, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7373118e6eb531d4b931b53c0a9428bf, type: 3}
+    - target: {fileID: 3211702656783437556, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081007652048562, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4427081007652048564, guid: 0d179337e560e774abaa6d4e82f2651d,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3821,6 +3841,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4427081007750018489, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4427081007750018491, guid: 0d179337e560e774abaa6d4e82f2651d,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3840,6 +3865,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081007885876995, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4427081007885876997, guid: 0d179337e560e774abaa6d4e82f2651d,
         type: 3}
@@ -3970,6 +4000,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TextboxManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081009441471304, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4427081009441471306, guid: 0d179337e560e774abaa6d4e82f2651d,
         type: 3}

@@ -29,7 +29,7 @@ public class NPC_Interaction : MonoBehaviour
         {
             exclamationMark.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKey(KeyCode.Q))
             {
                 Game_Manager.NPCTimeInteraction_Add();
                 //Trigger Event
@@ -51,7 +51,7 @@ public class NPC_Interaction : MonoBehaviour
         }
     }
 
-    
+
 
     private void OnTriggerExit2D(Collider2D collision)
     {
