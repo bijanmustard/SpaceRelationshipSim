@@ -7,6 +7,10 @@ using UnityEngine.UI;
 
 public class Game_Manager : MonoBehaviour
 {
+
+    private static Game_Manager instance;
+    public static Game_Manager Instance { get { return instance; } }
+
     public int currentTimeLeft;
     public int maxTimeLeft;
     public int dayCount = 1;
@@ -17,6 +21,7 @@ public class Game_Manager : MonoBehaviour
     public int currentHour = 3;
     public int nextMinute;
     // Don't be an idiot like me... nextHour is useless but it makes me feel better.
+    //Nah you a GENIUS :jimmyneutronface:
     public int nextHour;
 
     public Text time;
@@ -24,7 +29,24 @@ public class Game_Manager : MonoBehaviour
 
     public bool test = false;
 
-    
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(canvas.gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        //Destroy(canvas.gameObject);
+    }
 
     private void Start()
     {
