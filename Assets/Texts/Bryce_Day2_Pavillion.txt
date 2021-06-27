@@ -1,0 +1,12 @@
+<&d0>I spent many sleepless nights training to be the best soldier I could be. After what they did, I had to become better.
+<&w>
+I have to fight!
+=====================================================================
+{<0Bryce... what happened?!>;<1I believe in you! Let's ensure you're ready by going to the recharge chamber! (invite to Recharge Chamber)>;<2Destroy them all in the battle tomorrow! BLAM KACHOW!>}
+
+<&d2><&s2> my... family…<&s3>
+<&x>
+<&d0>Great idea! Tomorrow... I'll be unstoppable!
+<&x>
+<&d0>They'll pay for what they did, tomorrow I'll be unstoppable!
+<&x>
