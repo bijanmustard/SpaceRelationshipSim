@@ -5,7 +5,10 @@ using UnityEngine;
 public class Bryce_Day2_0 : Dialogue
 {
 
-
+    protected override string filename
+    {
+        get { return "Bryce/Bryce_Day2_0"; }
+    }
 
     protected override void DEvent0()
     {

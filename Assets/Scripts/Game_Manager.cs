@@ -5,6 +5,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(EventTriggers))]
 public class Game_Manager : MonoBehaviour
 {
 
@@ -34,8 +35,8 @@ public class Game_Manager : MonoBehaviour
 
     
     public Sprite[] daySprites;
-    
 
+    public EventTriggers flags;
 
 
     public bool test = false;
@@ -52,6 +53,8 @@ public class Game_Manager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             DontDestroyOnLoad(canvas.gameObject);
         }
+
+        flags = GetComponent<EventTriggers>();
     }
 
     private void OnDestroy()

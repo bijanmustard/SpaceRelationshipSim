@@ -1,0 +1,23 @@
+<&tNewcaster>
+Good morning heroes, it’s time to wake. The morning is here, and with it another day closer to our imminent victory. 
+The weather looks to be clear and bright, with no signs of meteor storms for the next few days.
+<&w>
+After what that last storm did to my speeder pod, I’d be happy if we never got meteors ever again! <&p3> Ha!  <&p3> Ha!  <&p3> Ha! 
+<&w>
+<&e0>
+============================================================
+Today, Sector Y had a phenomenal victory! The casualties were high, but no one of
+particular importance was lost today! After securing Sector X's primary command station and knocking out their missile 
+defense system, this war may soon be over! Sector Y's General commends the ISS for allowing our galaxy's soldiers
+a great place to recharge and believes it's the reason for their great success.
+<&w>
+<&e1>
+=======================================================================
+In a grueling battle between Sector X and Y, very little progress was made today. No casualties were lost.
+<&w>
+<&e1>
+=======================================================================
+That is all for our morning report. Stay vigilant!
+<&e2>
+<&x>
+

@@ -40,7 +40,7 @@ public class TextboxManager : MonoBehaviour
     protected Text[] texts;
     protected Button[] buttons;
     protected Player_Movement playerMove;
-    protected AudioSource audio;
+    protected new AudioSource audio;
 
     //Text sounds
     public AudioClip charSound;

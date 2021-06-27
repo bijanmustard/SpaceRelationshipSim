@@ -9,7 +9,7 @@ using UnityEngine;
  * Supports up to 10 Dialogue Events.
  */
 
-public class Dialogue : MonoBehaviour
+public abstract class Dialogue : MonoBehaviour
 {
     [SerializeField]
     public Dax_Character dax_Character;
@@ -17,8 +17,16 @@ public class Dialogue : MonoBehaviour
     [SerializeField]
     public Bryce_Character bryce_Character;
 
-    [SerializeField]
     public TextAsset dialogueScript;
+
+    [SerializeField]
+    protected abstract string filename { get; }
+
+    private void Awake()
+    {
+        //1. Set text asset
+        dialogueScript = Resources.Load<TextAsset>(string.Format("Texts/{0}.txt", filename));
+    }
 
     //Event Caller
     public void Event(int i)

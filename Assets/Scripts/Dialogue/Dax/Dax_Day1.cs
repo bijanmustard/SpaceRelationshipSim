@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Dax_Day1 : Dialogue
 {
-
+    protected override string filename
+    {
+        get { return "Dax/Dax_Day1_0"; }
+    }
     protected override void DEvent0()
     {
         TextboxManager.Instance.SetLine(10);

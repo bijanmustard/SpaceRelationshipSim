@@ -1,0 +1,36 @@
+<&tBartender>
+Good day.
+<&w>
+How may I help you?
+{<0You want to chat?>;<1I was just on my way.>}
+=========
+I don't mind a good conversation once in a while.
+<&w>
+What's on your mind?
+{<2What do you think of the war?>;<3Do you like your job?>;<4I would like to get to know you better.>}
+=========
+Well, goodbye then.
+<&x>
+=========
+Well, it brings in buisness. That's the only good thing about it. I get to see people from all over. Like yourself.
+<&w>
+That, however, is where the perks end. I've seen too many mourning the loss of loved ones. A tragic thing.
+{<5Have you lost anyone?>;<6Ah..>}
+I think that is enough.
+<&x>
+=========
+Can I help you with anything else?
+{<2What do you think of the war?>;<3Do you like your job?>;<4I would like to get to know you better.>;<1I was just on my way.>}
+=========
+Well, goodye then.
+<&x>
+=========
+Some days.
+<&w>
+Can I help you with anything else?
+{<2What do you think of the war?>;<3Do you like your job?>;<4I would like to get to know you better.>;<1I was just on my way.>}
+=========
+Then stay a while. And come back tomorrow.
+<&w>
+Can I help you with anything else?
+{<2What do you think of the war?>;<3Do you like your job?>;<4I would like to get to know you better.>;<1I was just on my way.>}

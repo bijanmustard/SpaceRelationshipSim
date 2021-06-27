@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Dax_Day1_0 : Dialogue
 {
-    
+    protected override string filename
+    {
+        get { return "Dax/Dax_Day1_0"; }
+    }
 
     protected override void DEvent0()
     {

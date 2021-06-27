@@ -1,0 +1,27 @@
+<&tDax>
+Hello!
+<&s3> Welcome to Space Burger!
+<&w>
+<&s3>
+How may I help you? 
+{<0One space burger, please.>;<1I need to speak to your manager.>}
+<><><><>
+Okay, one Space Burger coming right up!
+...Here you go!
+<&w> 
+<&tYou>
+*sloppy eating noises*
+<&w>
+*satisfying <&p3> gulp*
+<&x>
+<><><><>
+<&d1>
+You're speaking to them. What's the issue? 
+<&w>
+Oh... sorry. Nope. Can't help with that. Our employee training book never covered such a thing. 
+<&w>
+<&d0>
+I'd reccommend getting that looked at by a doctor, though.
+<&x>
+
+

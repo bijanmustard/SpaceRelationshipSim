@@ -5,7 +5,10 @@ using UnityEngine;
 public class Dia_Newscast2 : Dialogue
 {
 
-   
+    protected override string filename
+    {
+        get { return "News2"; }
+    }
 
     protected override void DEvent0()
     {
@@ -20,7 +23,7 @@ public class Dia_Newscast2 : Dialogue
 
     protected override void DEvent2()
     {
-        TextboxManager.Instance.SetExitEvent(delegate { SceneController.Instance.GoToScene("Bar"); });
+        TextboxManager.Instance.SetExitEvent(delegate { SceneController.Instance.GoToScene("TBC"); });
     }
 }
 

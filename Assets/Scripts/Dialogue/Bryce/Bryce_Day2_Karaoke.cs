@@ -5,7 +5,10 @@ using UnityEngine;
 public class Bryce_Day2_Karaoke : Dialogue
 {
 
-
+    protected override string filename
+    {
+        get { return "Bryce/Bryce_Day2_Karaoke"; }
+    }
 
     protected override void DEvent0()
     {
