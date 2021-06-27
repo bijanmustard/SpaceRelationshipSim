@@ -1,0 +1,16 @@
+<&tDax>
+Hello little eclipse, you seem to be lost.
+{<0I was looking for the bar.>;<1I’m only lost because you eclipsed my vision with your beauty.>;<2Your sense of style is lost and I only wish you were an eclipse right now. Away!>}
+==================================================================
+The ISS is quite vast! Come, I shall accompany you there!
+<&e5>
+<&x>
+=================================================================
+<&d3>
+So forward! Come and join me at the bar! I shall buy you a drink.
+<&e5>
+<&x>
+=================================================================
+<&d2>
+With how things are going in the war, I may very well permanently eclipse soon.
+<&x>
