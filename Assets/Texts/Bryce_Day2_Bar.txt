@@ -1,0 +1,17 @@
+<&tBryce>
+This was a good choice. A drink always helps me relax before the next big fight.
+<&w>
+But…
+<&w>
+This war…
+<&w>
+<&d2> Sometimes I wonder <&s1> …
+<&s3> Is it really necessary?
+{<0War is never necessary.>;<1For those in power it is.>;<2Of course! Get that adrenaline! Charge into battle! PEW PEW PEW!>}
+=====================================================================
+<&d2>There will always be others who will require it. (Neutral) That's why I'm going to fight and do my best.
+<&e3>
+That's why I'm going to fight my way up the ranks!
+<&e3>
+<&d1>You're right. That's my role as a soldier!<&d0>I'm going to give it my best tomorrow.>
+<&e3>
