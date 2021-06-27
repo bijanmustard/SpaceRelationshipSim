@@ -3108,6 +3108,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: Plaza
   playerPosition: {x: 15, y: 0, z: 1}
+  nextSceneIndex: 1
+  currentScene: 2
+  moveCanvas: {fileID: 0}
+  moveGameManager: {fileID: 0}
 --- !u!1 &2567307203773755627
 GameObject:
   m_ObjectHideFlags: 0
