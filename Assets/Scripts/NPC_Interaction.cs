@@ -46,7 +46,7 @@ public class NPC_Interaction : MonoBehaviour
         if (!TextboxManager.Instance.IsRunning)
         {
             if (mySprites != null) dCanvas.EnableCanvas(ref mySprites);
-            Game_Manager.NPCTimeInteraction_Add();
+            Game_Manager.Instance.NPCTimeInteraction_Add();
             TextboxManager.Instance.StartDialogue(myDialogue);
         }
     }

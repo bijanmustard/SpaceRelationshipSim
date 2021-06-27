@@ -34,10 +34,8 @@ public class Dax_Day1_0 : Dialogue
     //Queue bar transition
     protected override void DEvent5()
     {
-        //Queue scene transition with cutscene ID (?)
-        dax_Character.daxTriggers.daxMoves = true;
-        SceneController.Instance.GoToScene("Bar");
-        dax_Character.SpawnDax();
+        //TextboxManager.Instance.SetLine(18);
+        SceneController.Instance.GoToScene("TBC");
 
 
 
