@@ -11,17 +11,29 @@ using UnityEngine;
 public class NewcastController : MonoBehaviour
 {
 
-    Dialogue[] news;
+    public Dialogue[] news;
+    bool hasStart;
 
     private void Awake()
     {
         news = GetComponentsInChildren<Dialogue>();
     }
 
-    void Update()
+    private void Start()
     {
-        if (Game_Manager.Instance.dayCount == 2) TextboxManager.Instance.StartDialogue(news[0]);
-        else if (Game_Manager.Instance.dayCount == 3) TextboxManager.Instance.StartDialogue(news[1]);
+        if (!hasStart)
+        {
+            if (Game_Manager.Instance.dayCount == 1)
+            {
+                TextboxManager.Instance.StartDialogue(news[1]);
+                hasStart = true;
+            }
+            else if (Game_Manager.Instance.dayCount == 2)
+            {
+                TextboxManager.Instance.StartDialogue(news[1]);
+                hasStart = true;
+            }
+        }
     }
 
 }

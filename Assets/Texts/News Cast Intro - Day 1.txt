@@ -1,0 +1,19 @@
+<&tNewscaster>
+Good morning, everyone. I'm certain everone is anxious to know what became of yesterdays battle...
+<&e0>
+==================================================================================
+Sector X was overwhelmingly victorious today in their battle against Sector Y. Our Chief of Technology, 
+Dax, was swift at denying our enemy's offense and was able to warp their missile attacks back at their command ship. 
+<&w>
+This war is certainly only mere days away from being decided!
+<&e1>
+==================================================================================
+
+Sector X feels a crippling loss today, with their Chief of Technology, Dax, reported dead in a battle overnight.
+<&w>
+Sector Y’s missile was never intercepted, and collided with Dax’s command ship. Dax’s gift for relocating warp
+locations was clearly not in effect here. What could have caused Dax to be so distracted?
+<&e1>
+===================================================================================
+That is the end of todays report. Stay vigilant!
+<&x>
