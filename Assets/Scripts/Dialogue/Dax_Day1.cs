@@ -28,8 +28,7 @@ public class Dax_Day1 : Dialogue
 
     }
     protected override void DEvent6()
-    
-{
+    {
     }
 
 

@@ -21,7 +21,6 @@ public class EventTriggers : MonoBehaviour
     public bool bryceMoves;
     public string bryceMovesScenes;
     public int brycesConfidenceCounter = 0;
-    public bool bryceDeath = false;
 
 
     [Header("Misc")]

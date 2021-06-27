@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <&tNewcaster>
 Good morning heroes, it’s time to wake. The morning is here, and with it another day closer to our imminent victory. 
 The weather looks to be clear and bright, with no signs of meteor storms for the next few days.
@@ -20,3 +21,5 @@ In a grueling battle between Sector X and Y, very little progress was made today
 That is all for our morning report. Stay bright and vigilant!
 <&e2>
 <&x>
+=======
+>>>>>>> parent of 1ce1727 (Merge branch 'experimental' of https://github.com/bijanmustard/SpaceRelationshipSim into experimental)

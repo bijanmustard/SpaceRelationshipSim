@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Dax_Character : MonoBehaviour
 {
-    public EventTriggers daxTriggers = GameObject.Find("Game Manager").GetComponent<EventTriggers>();
+    public EventTriggers daxTriggers;
 
 
 

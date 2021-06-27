@@ -66,7 +66,6 @@ public class TextboxManager : MonoBehaviour
     protected bool waitForOption = false;
 
     protected int linePointer = 0;
-    protected int setLine = -1;
 
     protected Action exitEvent;
 
@@ -154,7 +153,7 @@ public class TextboxManager : MonoBehaviour
     // SetLine is called by events to set the linePointer.
     public void SetLine(int line)
     {
-        setLine = Mathf.Clamp(line-1, 0, lines.Length);
+        linePointer = Mathf.Clamp(line-1, 0, lines.Length);
     }
 
     // SetExitEvent sets a delgate function to be called upon exiting the dialogue event.
@@ -420,12 +419,7 @@ public class TextboxManager : MonoBehaviour
             }
 
             //Increment line pointer
-            if (setLine > -1 && setLine <= lines.Length)
-            {
-                linePointer = setLine;
-                setLine = -1;
-            }
-            else linePointer++;
+            linePointer++;
                 //If linePointer is larger than lines length, end dialogue.
                 if (linePointer >= lines.Length) endDialogue = true;
             

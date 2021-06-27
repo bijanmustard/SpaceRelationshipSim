@@ -9,8 +9,8 @@ public class Dia_Newscast2 : Dialogue
 
     protected override void DEvent0()
     {
-        if (!Game_Manager.Instance.flags.bryceDeath) TextboxManager.Instance.SetLine(16);
-        else TextboxManager.Instance.SetLine(9);
+        //if (!Game_Manager.Instance.flags.bryceDeath) TextboxManager.Instance.SetLine(16);
+        //else TextboxManager.Instance.SetLine(9);
     }
 
     protected override void DEvent1()
