@@ -2110,14 +2110,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02604e70d3c0afb4b917dcfdfe7ea65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTimeLeft: 12
-  maxTimeLeft: 12
+  currentTimeLeft: 5
+  maxTimeLeft: 5
   dayCount: 0
   canvas: {fileID: 1634894507}
   pdaVisible: 0
   currentMinute: 0
-  currentHour: 3
-  nextMinute: 15
+  currentHour: 11
+  nextMinute: 40
   nextHour: 1
   blinkRateCooldown: 1
   time: {fileID: 541615165}
@@ -4716,7 +4716,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1692049460322036292
 MonoBehaviour:
