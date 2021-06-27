@@ -18,7 +18,8 @@ using UnityEditor.Events;
  * <&s(int)> -- set read speed
  * <&x> -- Exit text event
  * {<1..>;<2..>;..<n..>} -- Options (limit of four)
- * <&e(int)> -- change expression (for initimate dialogue)
+ * <&d(int)> -- change expression (for initimate dialogue)
+ * <&e(int)> -- call (int) event
  */
 
 public class TextboxManager : MonoBehaviour
@@ -28,19 +29,26 @@ public class TextboxManager : MonoBehaviour
     private static TextboxManager instance;
     public static TextboxManager Instance {get {return instance;}}
 
+    protected DialogueCanvas dCanvas;
+
     protected char[] punctuation = { '.', '?', '!' };
 
     Canvas myCanvas;
-    public GameObject box;
-    protected RectTransform boxRect;
+    GameObject box;
+    RectTransform boxRect;
     GameObject breakImg;
     protected Text[] texts;
     protected Button[] buttons;
+    protected Player_Movement playerMove;
+    protected AudioSource audio;
+
+    //Text sounds
+    public AudioClip charSound;
 
     //Button actions
     Action[] buttActs = new Action[4];
 
-    protected Coroutine runIE;
+    public Coroutine runIE;
     protected bool isRunning = false;
     public bool IsRunning { get { return isRunning; } }
 
@@ -64,7 +72,7 @@ public class TextboxManager : MonoBehaviour
     {
         //Singleton
         if (instance != null && instance != this) Destroy(gameObject);
-        else instance = this;
+        else { instance = this; DontDestroyOnLoad(gameObject); }
 
         //Get refs
         if (box == null) box = transform.Find("Box").gameObject;
@@ -74,6 +82,9 @@ public class TextboxManager : MonoBehaviour
         breakImg = box.transform.Find("Break").gameObject;
         buttons = transform.Find("Buttons").GetComponentsInChildren<Button>();
         buttons[0].onClick.AddListener(delegate { TriggerDEvent(0); });
+        dCanvas = FindObjectOfType<DialogueCanvas>();
+        playerMove = FindObjectOfType<Player_Movement>();
+        audio = GetComponent<AudioSource>();
 
         //Disable textbox
         ToggleTextbox(false);
@@ -90,7 +101,7 @@ public class TextboxManager : MonoBehaviour
             if (runIE != null) StopCoroutine(runIE);
             breakImg.SetActive(false);
             ToggleButtons(false);
-            
+            linePointer = 0;
             texts[0].text = "";
             texts[1].text = "";
         }
@@ -120,6 +131,10 @@ public class TextboxManager : MonoBehaviour
     // StartDialoge is called by an NPC to trigger a dialogue.
     public void StartDialogue(Dialogue myDia)
     {
+        //0. Lock player movement
+        if (playerMove == null) playerMove = FindObjectOfType<Player_Movement>();
+        playerMove.LockMovement(true);
+
         //1. Initialize
         InitDialogue(ref myDia);
         //2. Open text box
@@ -127,6 +142,9 @@ public class TextboxManager : MonoBehaviour
         //3. Start Coroutine
         if (!isRunning) runIE = StartCoroutine(RunScript());
     }
+
+
+    //<><> EVENT FUNCTIONS <><>
 
     // SetLine is called by events to set the linePointer.
     public void SetLine(int line)
@@ -136,6 +154,11 @@ public class TextboxManager : MonoBehaviour
 
     // EndOption is called in Dialogue to end the optionWait bool
     public void EndOptionWait() { waitForOption = false;}
+
+    //<><><><><><><><><><><><><>
+
+
+
 
     //CheckOptions checks if the input line is an options line. Displays options if true.
     protected bool CheckOptions(string line)
@@ -169,6 +192,9 @@ public class TextboxManager : MonoBehaviour
                 string myName = myWord;
                 myName = myName.Trim('>');
                 myName = myName.Remove(0, 3);
+                //Replace spaces
+                myName = myName.Replace("&'_'", " ");
+                Debug.Log(myName);
                 texts[0].text = myName;
             }
 
@@ -196,8 +222,20 @@ public class TextboxManager : MonoBehaviour
                 int ev = (int)Char.GetNumericValue(chars[3]);
                 curDialogue.Event(ev);
             }
+
             //6. Force exit
             else if (chars[2] == 'x') isExit = true;
+
+            //7. Change dCanvas expression
+            else if (chars[2] == 'd')
+            {
+                if(dCanvas.isCanvas)
+                {
+                    //Extract idx
+                    int idx = (int)Char.GetNumericValue(chars[3]);
+                    dCanvas.ChangeExpression(idx);
+                }
+            }
 
             //Return true if was meta
             return true;
@@ -263,11 +301,16 @@ public class TextboxManager : MonoBehaviour
     {
         isRunning = true;
         int charCount = 0;
+        isExit = false;
         bool endDialogue = false;
+
+        //Add audio
+        if (charSound != null) audio.clip = charSound;
 
         //1. Load text
         while (!endDialogue)
         {
+            
             //Get next line 
             string s = lines[linePointer];
             //If next line isn't an options line...
@@ -288,7 +331,7 @@ public class TextboxManager : MonoBehaviour
                         //If word won't fit in textbox, clear textbox
                         if (w.ToCharArray().Length + charCount > MAXCHARS)
                         {
-                            texts[0].text = "";
+                            texts[1].text = "";
                             charCount = 0;
                         }
                         //Add word
@@ -297,6 +340,8 @@ public class TextboxManager : MonoBehaviour
                             //add char and increment char count
                             texts[1].text += c.ToString();
                             charCount++;
+                            //play char sound
+                            audio.Play();
                             //wait for speed
                             speedMultiplier = (Input.GetKey(KeyCode.Space) ? 0.5f : 1);
                             yield return new WaitForSeconds(5 / (speed * 50f) * speedMultiplier);
@@ -326,7 +371,11 @@ public class TextboxManager : MonoBehaviour
             }
 
             // if is break, wait
-            if (isBreak) breakImg.SetActive(true);
+            if (isBreak)
+            {
+                breakImg.SetActive(true);
+                
+            }
             while (isBreak)
             {
                 //Wait for input
@@ -334,6 +383,7 @@ public class TextboxManager : MonoBehaviour
                 {
                     isBreak = false;
                     //clear text
+                    charCount = 0;
                     texts[1].text = "";
                     breakImg.SetActive(false);
                 }
@@ -349,6 +399,7 @@ public class TextboxManager : MonoBehaviour
         // End break
         isBreak = true;
         breakImg.SetActive(true);
+       
         while (isBreak)
         {
             //Wait for input
@@ -362,10 +413,22 @@ public class TextboxManager : MonoBehaviour
             else yield return null;
         }
         Debug.Log("Text done!");
-        isRunning = false;
-        //Close textbox
-        ToggleTextbox(false);
-        yield break;
+        OnTextboxExit();
+        yield return null;
 
+    }
+
+    //OnTextboxExit is called when the final break is made to close the textbox.
+    protected void OnTextboxExit()
+    {
+        //1. Set isRunning to false
+        isRunning = false;
+        //2. Close textbox
+        ToggleTextbox(false);
+        //3. Disable dialogue canvas if applicable
+        if (dCanvas.isCanvas) dCanvas.DisableCanvas();
+        //4. unlock player movement
+        playerMove.LockMovement(false);
+        
     }
 }

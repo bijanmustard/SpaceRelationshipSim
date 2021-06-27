@@ -1,0 +1,25 @@
+TextboxManager Glossary
+
+• <&t(name)>: Change speaker title text. Replace (name) with the desired name.
+     - **NOTE: to use spaces, use the following char: &’_’
+
+• <&w>: Textbox break/refresh
+
+• <&d(int)>: Expression change. Replace (int) with the index of the desired expression.
+EXPRESSION KEY
+0 – Calm
+1 – Anger
+2 – Sadness
+3 - Extra
+
+• <&x>: Exit text event. Closes the textbox after break.
+
+• <&s(int)>: Change textbox speed. 3 is default speed, 1 is slowest, >3 is faster.
+
+• <&e(int)>: Manually call event #(int). 
+
+• {<(int)(string)>;<(int)(string);…>}: Display options.
+     - Replace (int) with event number.  
+     - Replace (string) with option text.
+     - Separate options with ;
+     - Supports up to 4 options.
