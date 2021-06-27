@@ -133,7 +133,7 @@ public class TextboxManager : MonoBehaviour
     {
         //0. Lock player movement
         if (playerMove == null) playerMove = FindObjectOfType<Player_Movement>();
-        playerMove.LockMovement(true);
+        playerMove.ToggleMove(false);
 
         //1. Initialize
         InitDialogue(ref myDia);
@@ -361,6 +361,7 @@ public class TextboxManager : MonoBehaviour
                         //If not EOS
                         if (!eos) yield return new WaitForSeconds(5 / (speed * 50f) * speedMultiplier);
                         else yield return new WaitForSeconds(sentenceBreak);
+                        if (audio.isPlaying) audio.Stop();
                         
 
                     }
@@ -434,7 +435,7 @@ public class TextboxManager : MonoBehaviour
         //3. Disable dialogue canvas if applicable
         if (dCanvas.isCanvas) dCanvas.DisableCanvas();
         //4. unlock player movement
-        playerMove.LockMovement(false);
+        playerMove.ToggleMove(true);
         
     }
 }

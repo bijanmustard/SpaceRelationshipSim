@@ -24,7 +24,11 @@ public class Scene_Transition : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            StartCoroutine(ChangeScene());
+
+            Starting_Position_Value.initialValue = playerPosition;
+            Starting_Position_Value.transitionNumber += 1;
+            SceneController.Instance.GoToScene(sceneToLoad);
+
         }
     }
 
@@ -48,10 +52,6 @@ public class Scene_Transition : MonoBehaviour
         SceneManager.MoveGameObjectToScene(moveGameManager, nextScene);
 
         yield return null;
-
-        
-
-
 
         SceneManager.UnloadSceneAsync(currentScene);
 
