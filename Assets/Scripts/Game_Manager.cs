@@ -13,7 +13,7 @@ public class Game_Manager : MonoBehaviour
 
     public int currentTimeLeft;
     public int maxTimeLeft;
-    public int dayCount = 1;
+    public int dayCount;
     public Canvas canvas;
     public bool pdaVisible = false;
 
@@ -23,9 +23,20 @@ public class Game_Manager : MonoBehaviour
     // Don't be an idiot like me... nextHour is useless but it makes me feel better.
     //Nah you a GENIUS :jimmyneutronface:
     public int nextHour;
+    public float blinkRateCooldown;
+    private float blinkCountdown;
+    private float timer;
+    private bool blinking;
+
 
     public Text time;
-    public Text day;
+    public UnityEngine.UI.Image day;
+
+    
+    public Sprite[] daySprites;
+    
+
+
 
     public bool test = false;
 
@@ -55,7 +66,7 @@ public class Game_Manager : MonoBehaviour
             test = true;
 
             time.text = currentHour.ToString() + ":" + currentMinute.ToString("00");
-            day.text = "Day " + dayCount.ToString();
+            day.sprite = daySprites[dayCount];
         }
         
         
@@ -63,7 +74,23 @@ public class Game_Manager : MonoBehaviour
 
     private void Update()
     {
-        ShowPDA();
+
+        timer += Time.deltaTime;
+
+        if(blinking == true && blinkCountdown < timer)
+        {
+            blinking = false;
+            blinkCountdown = timer + blinkRateCooldown;
+            time.text = currentHour.ToString() + " " + currentMinute.ToString("00");
+        }
+
+        else if(blinking == false && blinkCountdown < timer)
+        {
+            blinking = true;
+            blinkCountdown = timer + blinkRateCooldown;
+            time.text = currentHour.ToString() + ":" + currentMinute.ToString("00");
+        }
+
     }
 
     // Reduces the current time left to talk on a day.
@@ -72,6 +99,8 @@ public class Game_Manager : MonoBehaviour
         currentTimeLeft -= 1;
 
         currentMinute += nextMinute;
+
+
 
         while (currentMinute >= 60)
         {
@@ -84,27 +113,14 @@ public class Game_Manager : MonoBehaviour
         {
             currentTimeLeft = maxTimeLeft;
             dayCount += 1;
-            day.text = "Day " + dayCount.ToString();
+            day.sprite = daySprites[dayCount];
         }
 
     }
 
    
 
-    // Basically Pulls up the UI for the news report and time check
-    public void ShowPDA()
-    {
-        if (Input.GetKeyDown("e") && pdaVisible == true)
-        {
-            canvas.enabled = false;
-            pdaVisible = false;
-        }
-        else if (Input.GetKeyDown("e") && pdaVisible == false)
-        {
-            canvas.enabled = true;
-            pdaVisible = true;
-        }
-    }
+
 
     public void EndDay()
     {
