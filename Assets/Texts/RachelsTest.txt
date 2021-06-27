@@ -1,0 +1,11 @@
+<&tName>
+Yo!
+<&w>
+What's up?
+{<0Nothing Much>;<1The sky!>}
+=========
+Well, you have a nice day!
+<&x>
+=========
+Haha... Very funny.
+<&x>
