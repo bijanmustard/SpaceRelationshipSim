@@ -31,7 +31,6 @@ public class NPC_Interaction : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Q))
             {
-                Game_Manager.NPCTimeInteraction_Add();
                 //Trigger Event
                 StartDialogue();
 
@@ -47,6 +46,7 @@ public class NPC_Interaction : MonoBehaviour
         if (!TextboxManager.Instance.IsRunning)
         {
             if (mySprites != null) dCanvas.EnableCanvas(ref mySprites);
+            Game_Manager.NPCTimeInteraction_Add();
             TextboxManager.Instance.StartDialogue(myDialogue);
         }
     }
