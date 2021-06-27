@@ -5,11 +5,15 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(EventTriggers))]
 public class Game_Manager : MonoBehaviour
 {
 
     private static Game_Manager instance;
     public static Game_Manager Instance { get { return instance; } }
+
+    //Ref to booleans
+    public EventTriggers flags;
 
     public int currentTimeLeft;
     public int maxTimeLeft;
@@ -34,9 +38,6 @@ public class Game_Manager : MonoBehaviour
 
     
     public Sprite[] daySprites;
-    
-
-
 
     public bool test = false;
 
@@ -52,6 +53,8 @@ public class Game_Manager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             DontDestroyOnLoad(canvas.gameObject);
         }
+
+        flags = GetComponent<EventTriggers>();
     }
 
     private void OnDestroy()
