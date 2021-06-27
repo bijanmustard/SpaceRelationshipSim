@@ -46,7 +46,7 @@ public class TextboxManager : MonoBehaviour
     public AudioClip charSound;
 
     //Button actions
-    Action[] buttActs = new Action[4];
+    int[] buttActs = new int[4];
 
     public Coroutine runIE;
     protected bool isRunning = false;
@@ -66,6 +66,7 @@ public class TextboxManager : MonoBehaviour
     protected bool waitForOption = false;
 
     protected int linePointer = 0;
+    
 
 
     private void Awake()
@@ -133,7 +134,7 @@ public class TextboxManager : MonoBehaviour
     {
         //0. Lock player movement
         if (playerMove == null) playerMove = FindObjectOfType<Player_Movement>();
-        playerMove.ToggleMove(false);
+        if(playerMove != null) playerMove.ToggleMove(false);
 
         //1. Initialize
         InitDialogue(ref myDia);
@@ -254,14 +255,16 @@ public class TextboxManager : MonoBehaviour
             char[] c = ops[i].ToCharArray();
             //2. check event code and add listener
             int ev = (int)Char.GetNumericValue(c[1]);
-            buttActs[i] = delegate { TriggerDEvent(ev); };
+            buttActs[i] = ev;
 
             //3. Get text from string
             string opt = ops[i];
             opt = opt.Trim('>');
             opt = opt.Remove(0, 2);
+
             //4. set to button text
             buttons[i].GetComponentInChildren<Text>().text = opt;
+
             //5. enable button
             buttons[i].gameObject.SetActive(true);
         }
@@ -270,30 +273,29 @@ public class TextboxManager : MonoBehaviour
     //Button click functions
     public void Button1Event()
     {
-        buttActs[0].Invoke();
+        TriggerDEvent(buttActs[0]);
     }
 
     public void Button2Event()
     {
-        buttActs[1].Invoke();
+        TriggerDEvent(buttActs[1]);
     }
 
     public void Button3Event()
     {
-        buttActs[2].Invoke();
+        TriggerDEvent(buttActs[2]);
     }
 
     public void Button4Event()
     {
-        buttActs[3].Invoke();
+        TriggerDEvent(buttActs[3]);
     }
 
 
     //TriggerDEvent is a listner for buttons to call curDialgoue's events.
     public void TriggerDEvent(int val)
     {
-        curDialogue.Event(val);
-        
+        curDialogue.Event(val);   
     }
 
     //IE for reading text asset script
@@ -435,7 +437,7 @@ public class TextboxManager : MonoBehaviour
         //3. Disable dialogue canvas if applicable
         if (dCanvas.isCanvas) dCanvas.DisableCanvas();
         //4. unlock player movement
-        playerMove.ToggleMove(true);
+        if(playerMove != null) playerMove.ToggleMove(true);
         
     }
 }
