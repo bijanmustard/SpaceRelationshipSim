@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/INIT.unity
+    guid: e421c7742f5e01e4395d0b9332c115ab
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 4cd4ad66969fc444f91db0ef72cca044
+  - enabled: 1
     path: Assets/Scenes/Bar.unity
     guid: 2eb1649c21bde234cbba3392853600b0
   - enabled: 1
@@ -14,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hotel.unity
     guid: 0ef0cb5dd8975db499e608f6d13c82ac
+  - enabled: 1
+    path: Assets/Scenes/TelevisionReport.unity
+    guid: d120c3d40d8f26a4785da503bf0e09a1
+  - enabled: 1
+    path: Assets/Scenes/Credits/TBC.unity
+    guid: a3bb016c0ba0cfc42bcc7d54ac470dc3
   m_configObjects: {}

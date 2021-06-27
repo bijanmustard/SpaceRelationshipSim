@@ -19,8 +19,8 @@ public class SceneController : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null && instance != this) Destroy(gameObject);
-        else { instance = this; DontDestroyOnLoad(gameObject); }
+        if (instance != null && instance != this) Destroy(transform.parent.gameObject);
+        else { instance = this; DontDestroyOnLoad(transform.parent.gameObject); }
     }
 
     // GoToScene() is called to go to a specified scene.

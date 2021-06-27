@@ -25,7 +25,7 @@ public class NewcastController : MonoBehaviour
         {
             if (Game_Manager.Instance.dayCount == 1)
             {
-                TextboxManager.Instance.StartDialogue(news[1]);
+                TextboxManager.Instance.StartDialogue(news[0]);
                 hasStart = true;
             }
             else if (Game_Manager.Instance.dayCount == 2)
