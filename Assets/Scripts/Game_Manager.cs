@@ -22,19 +22,17 @@ public class Game_Manager : MonoBehaviour
     public Text time;
     public Text day;
 
-    public bool test = false;
+    
 
     
 
     private void Start()
     {
-        if(test == false)
-        {
-            test = true;
+        
 
             time.text = currentHour.ToString() + ":" + currentMinute.ToString("00");
             day.text = "Day " + dayCount.ToString();
-        }
+        
         
         
     }
