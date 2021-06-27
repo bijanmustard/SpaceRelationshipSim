@@ -85,7 +85,7 @@ public class SceneController : MonoBehaviour
         while (TransitionManager.Instance.isTrans) yield return null;
         Debug.Log("Loading scene....");
         //3. LoadScene
-        SceneManager.LoadScene(str);
+        SceneManager.LoadScene(str, LoadSceneMode.Additive);
         //4. TransitionIn
         TransitionManager.Instance.TransitionIn();
         if (move != null) move.LockMovement(false);

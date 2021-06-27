@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Dax_Day1_0 : Dialogue
 {
@@ -27,12 +28,18 @@ public class Dax_Day1_0 : Dialogue
         //Set bool here <-------
     }
 
+    
+
+
     //Queue bar transition
     protected override void DEvent5()
     {
         //Queue scene transition with cutscene ID (?)
-        dax_Character.DaxsLocation("Bar");
-        
-        
+        dax_Character.daxTriggers.daxMoves = true;
+        SceneController.Instance.GoToScene("Bar");
+        dax_Character.SpawnDax();
+
+
+
     }
 }

@@ -12,19 +12,23 @@ public class Dax_Character : MonoBehaviour
     // Day one Functions
     public GameObject daxDay1Bar;
 
+    
 
-    private void Awake()
+
+    
+
+    public void SpawnDax()
     {
-        if(daxTriggers.daxMoves == true)
+        if (daxTriggers.daxMoves == true)
         {
             daxDay1Bar.SetActive(true);
+
         }
         else
         {
             daxDay1Bar.SetActive(false);
         }
     }
-
 
     public void DaxsLocation(string location)
     {
