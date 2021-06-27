@@ -1,0 +1,22 @@
+<&tBryce>
+What in the pollination do we have here? You don’t look like much of a solider.
+{<0You’re right, my sector hasn’t issued me a weapon yet.>;<1I’m a lover, not a fighter. A pollinator, not a biter.>;<2There are other ways to fight a war than with weapons alone.>}
+===================================================================
+<&d1>
+If you’re with that Sector Y filth, you best leave me alone until tomorrow!
+<&w>
+<&e3>
+====================================================================
+<&d0> I can relate! But with Sector X giving me this gun <&s1> … <&d1> <&s1>
+… I bite just fine now!
+<&w>
+<&e3>
+====================================================================
+<&d0> 
+You mean with “pwopaganda” and “dipwomacy” and - <&d1> Nonsense! 
+A charged plasma weapon is all I need!
+<&e3>
+<&w>
+====================================================================
+The commander says I’m looking at a promotion after next battle so I gotta keep my focus. What do you do here to relax?
+{<4Drink my troubles away! (Invite Bryce to the bar)>;<5Embarrass myself! (Invite Bryce to karaoke)>;<6Inspire myself for battle! (invite Bryce to the pavilion)>
