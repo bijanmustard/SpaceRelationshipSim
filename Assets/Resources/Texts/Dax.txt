@@ -1,0 +1,40 @@
+<&tDax>
+"Hello little eclipse, you seem to be lost."
+{<0I was looking for the bar.>;<1I'm only lost because you eclipsed my vision with your beauty ;)>;<2Your sense of style is lost and I only wish you were an eclipse right now. Away!>}
+====================
+"The ISS is quite vast! Come, I shall accompany you there!"
+<&e(3)>
+"So forward! Come and join me at the bar! I shall buy you a drink."
+<&e(3)>
+<&d2>
+"With how things are going in the war, I may very well permanently eclipse soon."
+<&e(3)>
+====================
+<&d2>
+Dax leads you to the bar. With all of the amenities offered at the ISS, it's no wonder factions from both sides
+of the war enjoy each other's company here.
+<&w>
+Dax greets the bartender with a smile places the order,
+and the two exchange heartfelt words, the bartender hands Dax the drinks then walks away with 
+tears streaming down their face. Dax turns to you grimly.
+<&w>
+"This war has taken much from all of us. Our dear bartender lost their offspring last week. 
+I must ensure I'm deployed in a different sector in tomorrow's battle."
+{<4Do you work in military IT?>;<5Can I be deployed in your sector? ;)>;<6The bartender's your enemy! Kill them here!>}
+====================
+"Yep, graduated from Drury Space Academy's IT program."
+<&e(7)>
+"Yes if that's an innuendo, no if you mean the battlefield."
+<&e(7)>
+<&d2>"You must be an offspring of those who started this war."
+<&x>
+====================
+"If you'd like I could teach you the basics of manipulating warp drives 
+to allow accurate and safe relocation of your coordinates 
+to any location you desire within 500 solar systems!"
+{<8You had me at "If".>;<9Anywhere my coordinates can intersect with your coordinates would be most desirable. ;)>;<10Psh, only 500 solar systems?! Ever heard of hyper drives?>}
+====================
+"My basic equipment is back in my room, let us not waste another second!"
+"That could either be potentially fatal or a lot of fun! Let us find out!"
+"Hyper drives are entirely too energy inefficient and much riskier for warping. I shall explain in greater detail in
+my room!"

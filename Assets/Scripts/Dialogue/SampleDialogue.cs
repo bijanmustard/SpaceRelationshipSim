@@ -5,6 +5,10 @@ using UnityEngine;
 public class SampleDialogue : Dialogue
 {
 
+    protected override string filename
+    {
+        get { return "Dialogues/sampleDialogue"; }
+    }
     protected override void DEvent0()
     {
         //Move line pointer to line 7

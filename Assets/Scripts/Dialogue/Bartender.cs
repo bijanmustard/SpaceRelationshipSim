@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bartender : Dialogue
 {
+    protected override string filename { get { return "Bartender"; } }
 
     protected override void DEvent0()
     {

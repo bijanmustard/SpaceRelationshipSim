@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class RachelsTest : Dialogue
 {
-
+    protected override string filename
+    {
+        get { return "RachelsTest"; }
+    }
     protected override void DEvent0()
     {
         TextboxManager.Instance.SetLine(7);
