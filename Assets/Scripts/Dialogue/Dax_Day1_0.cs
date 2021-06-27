@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Dax_Day1_0 : Dialogue
 {
+    public Dax_Character dax_Character;
+
     protected override void DEvent0()
     {
         TextboxManager.Instance.SetLine(5);
@@ -21,8 +23,10 @@ public class Dax_Day1_0 : Dialogue
     }
 
     //Queue bar transition
-    protected override void DEvent3()
+    protected override void DEvent5()
     {
         //Queue scene transition with cutscene ID (?)
+        
+        SceneController.Instance.GoToScene("Bar");
     }
 }
