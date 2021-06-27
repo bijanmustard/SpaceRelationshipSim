@@ -8,6 +8,7 @@ The ISS is quite vast! Come, I shall accompany you there!
 =================================================================
 <&d3>
 So forward! Come and join me at the bar! I shall buy you a drink.
+{<6Okay!>;<7I'd rather not...>}
 <&e5>
 <&x>
 =================================================================
