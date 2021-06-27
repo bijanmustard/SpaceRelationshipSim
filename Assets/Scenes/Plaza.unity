@@ -1463,12 +1463,6 @@ PolygonCollider2D:
       - {x: 1.4461288, y: -1.22242}
       - {x: 1.6809454, y: 0.06644249}
       - {x: 1.980464, y: 1.1462681}
---- !u!1 &68718017159953599 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7735210240653944732, guid: c9fd047767d919741a0bb862588dde72,
-    type: 3}
-  m_PrefabInstance: {fileID: 7758820448608492323}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &927268558197517901
 Animator:
   serializedVersion: 3
@@ -3753,7 +3747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   daxTriggers: {fileID: 6981512397608388938}
-  daxDay1: {fileID: 68718017159953599}
+  daxDay1Bar: {fileID: 0}
 --- !u!114 &6981512397608388953
 MonoBehaviour:
   m_ObjectHideFlags: 0
