@@ -2129,6 +2129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1165105840}
   - component: {fileID: 1165105841}
+  - component: {fileID: 1165105842}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -2174,6 +2175,24 @@ MonoBehaviour:
   time: {fileID: 541615165}
   day: {fileID: 1033614509}
   test: 0
+--- !u!114 &1165105842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165105839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c17af8bd661a944acaea8163d62b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayOneStart: 0
+  daxDeath: 0
+  dayOneEnd: 0
+  dayTwoStart: 0
+  brycesConfidenceCounter: 0
+  dayTwoEnd: 0
 --- !u!1 &1166684263
 GameObject:
   m_ObjectHideFlags: 0
