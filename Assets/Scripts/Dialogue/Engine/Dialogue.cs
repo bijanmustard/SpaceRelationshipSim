@@ -50,6 +50,39 @@ public class Dialogue : MonoBehaviour
             case 9:
                 DEvent9();
                 break;
+            case 10:
+                DEvent10();
+                break;
+            case 11:
+                DEvent11();
+                break;
+            case 12:
+                DEvent12();
+                break;
+            case 13:
+                DEvent13();
+                break;
+            case 14:
+                DEvent14();
+                break;
+            case 15:
+                DEvent15();
+                break;
+            case 16:
+                DEvent16();
+                break;
+            case 17:
+                DEvent17();
+                break;
+            case 18:
+                DEvent18();
+                break;
+            case 19:
+                DEvent19();
+                break;
+            case 20:
+                DEvent20();
+                break;
             default:
                 Debug.Log("Event not found.");
                 break;
@@ -70,4 +103,15 @@ public class Dialogue : MonoBehaviour
     protected virtual void DEvent7() { Debug.Log("DEvent7"); }
     protected virtual void DEvent8() { Debug.Log("DEvent8"); }
     protected virtual void DEvent9() { Debug.Log("DEvent9"); }
+    protected virtual void DEvent10() { Debug.Log("DEvent10"); }
+    protected virtual void DEvent11() { Debug.Log("DEvent11"); }
+    protected virtual void DEvent12() { Debug.Log("DEvent12"); }
+    protected virtual void DEvent13() { Debug.Log("DEvent13"); }
+    protected virtual void DEvent14() { Debug.Log("DEvent14"); }
+    protected virtual void DEvent15() { Debug.Log("DEvent15"); }
+    protected virtual void DEvent16() { Debug.Log("Devent16"); }
+    protected virtual void DEvent17() { Debug.Log("DEvent17"); }
+    protected virtual void DEvent18() { Debug.Log("DEvent18"); }
+    protected virtual void DEvent19() { Debug.Log("DEvent19"); }
+    protected virtual void DEvent20() { Debug.Log("DEvent20"); }
 }
