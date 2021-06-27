@@ -10,6 +10,11 @@ public class Bryce_Character : MonoBehaviour
 
     // Day 2 functions
 
+    public string BrycesLocation()
+    {
+        return bryceTriggers.bryceMovesScenes;
+    }
+
     public bool BrycesFaith()
     {
         // Day 2

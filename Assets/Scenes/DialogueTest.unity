@@ -233,10 +233,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1442728423}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9de4563b7dfb2d41b77a76744a2820b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d073dff4cc83e141b9f2ae3953c78ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueScript: {fileID: 4900000, guid: a79e3ebba79cb2748900b5efbcb95c27, type: 3}
+  dialogueScript: {fileID: 4900000, guid: 6cfadef0f4b342146885782b63d4bfc1, type: 3}
 --- !u!4 &1442728425
 Transform:
   m_ObjectHideFlags: 0
@@ -338,6 +338,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4427081007652048564, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081007652048564, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081007652048564, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081007652048564, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081007750018491, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081007750018491, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081007750018491, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081007750018491, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081007885876997, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081007885876997, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081007885876997, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081007885876997, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4427081008573314048, guid: 0d179337e560e774abaa6d4e82f2651d,
         type: 3}
       propertyPath: m_Pivot.x
@@ -447,6 +507,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TextboxManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081009441471306, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081009441471306, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081009441471306, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427081009441471306, guid: 0d179337e560e774abaa6d4e82f2651d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d179337e560e774abaa6d4e82f2651d, type: 3}
