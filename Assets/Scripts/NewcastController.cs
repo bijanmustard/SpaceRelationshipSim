@@ -10,15 +10,18 @@ using UnityEngine;
 
 public class NewcastController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    Dialogue[] news;
+
+    private void Awake()
     {
-        
+        news = GetComponentsInChildren<Dialogue>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Game_Manager.Instance.dayCount == 2) TextboxManager.Instance.StartDialogue(news[0]);
+        else if (Game_Manager.Instance.dayCount == 3) TextboxManager.Instance.StartDialogue(news[1]);
     }
+
 }
