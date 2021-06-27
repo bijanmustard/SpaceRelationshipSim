@@ -696,6 +696,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: Hotel
   playerPosition: {x: -4, y: 1.5, z: 1}
+  nextSceneIndex: 2
+  currentScene: 1
+  moveCanvas: {fileID: 0}
+  moveGameManager: {fileID: 0}
 --- !u!61 &932485990
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -734,7 +738,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1227419197
 GameObject:
@@ -1194,7 +1198,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1990683291
 GameObject:
@@ -1297,7 +1301,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2013691860
 GameObject:
@@ -1640,6 +1644,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: Bar
   playerPosition: {x: 5, y: 0, z: 1}
+  nextSceneIndex: 0
+  currentScene: 1
+  moveCanvas: {fileID: 0}
+  moveGameManager: {fileID: 0}
 --- !u!61 &7223553656523785306
 BoxCollider2D:
   m_ObjectHideFlags: 0
