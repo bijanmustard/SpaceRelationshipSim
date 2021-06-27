@@ -10,10 +10,14 @@ public class Dax_Character : MonoBehaviour
 
 
     // Day one Functions
+<<<<<<< HEAD
     public GameObject daxDay1Bar;
+=======
+>>>>>>> parent of ad51d49 (Idk part 2)
 
     
 
+<<<<<<< HEAD
 
     
 
@@ -30,6 +34,8 @@ public class Dax_Character : MonoBehaviour
         }
     }
 
+=======
+>>>>>>> parent of ad51d49 (Idk part 2)
     public void DaxsLocation(string location)
     {
         daxTriggers.daxMovesScene = location;

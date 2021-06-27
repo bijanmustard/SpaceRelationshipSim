@@ -12,11 +12,14 @@ using UnityEngine;
 public abstract class Dialogue : MonoBehaviour
 {
     [SerializeField]
+<<<<<<< HEAD
     public Dax_Character dax_Character;
 
     [SerializeField]
     public Bryce_Character bryce_Character;
 
+=======
+>>>>>>> parent of ad51d49 (Idk part 2)
     public TextAsset dialogueScript;
 
     [SerializeField]

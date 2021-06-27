@@ -5,16 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Dax_Day1_0 : Dialogue
 {
+<<<<<<< HEAD:Assets/Scripts/Dialogue/Dax/Dax_Day1_0.cs
     protected override string filename
     {
         get { return "Dax/Dax_Day1_0"; }
     }
+=======
+    public Dax_Character dax_Character;
+>>>>>>> parent of ad51d49 (Idk part 2):Assets/Scripts/Dialogue/Dax_Day1_0.cs
 
     protected override void DEvent0()
     {
         
         TextboxManager.Instance.SetLine(5);
-
     }
 
     protected override void DEvent1()
