@@ -10,6 +10,11 @@ public class Bryce_Character : MonoBehaviour
 
     // Day 2 functions
 
+    public void BrycesConfidenceIncrease()
+    {
+        bryceTriggers.brycesConfidenceCounter += 1;
+    }
+
     public string BrycesLocation()
     {
         return bryceTriggers.bryceMovesScenes;

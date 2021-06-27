@@ -29,6 +29,7 @@ public class Dax_Day1_0 : Dialogue
     {
         //Queue scene transition with cutscene ID (?)
         dax_Character.DaxsLocation("Bar");
-        SceneController.Instance.GoToScene("Bar");
+        
+        
     }
 }

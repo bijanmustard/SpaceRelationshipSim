@@ -11,16 +11,20 @@ public class Dax_Character : MonoBehaviour
 
     // Day one Functions
     public GameObject daxDay1Bar;
-    public GameObject daxDay1Plaza;
 
 
-    public void DaxsMovesDay1()
+    private void Awake()
     {
-        //GameObject dax;
-        SceneManager.LoadScene("Bar",LoadSceneMode.Additive);
-
-        //SceneManager.MoveGameObjectToScene()
+        if(daxTriggers.daxMoves == true)
+        {
+            daxDay1Bar.SetActive(true);
+        }
+        else
+        {
+            daxDay1Bar.SetActive(false);
+        }
     }
+
 
     public void DaxsLocation(string location)
     {
