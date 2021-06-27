@@ -12,6 +12,12 @@ using UnityEngine;
 public class Dialogue : MonoBehaviour
 {
     [SerializeField]
+    public Dax_Character dax_Character;
+
+    [SerializeField]
+    public Bryce_Character bryce_Character;
+
+    [SerializeField]
     public TextAsset dialogueScript;
 
     //Event Caller

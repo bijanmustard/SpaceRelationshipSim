@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Dax_Day1_0 : Dialogue
 {
-    public Dax_Character dax_Character;
+    
 
     protected override void DEvent0()
     {
         
         TextboxManager.Instance.SetLine(5);
+
     }
 
     protected override void DEvent1()

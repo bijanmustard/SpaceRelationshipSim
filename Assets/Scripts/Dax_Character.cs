@@ -9,7 +9,19 @@ public class Dax_Character : MonoBehaviour
 
 
     // Day one Functions
+    public GameObject daxDay1Bar;
+    public GameObject daxDay1Plaza;
 
+
+    public void DaxsMovesDay1()
+    {
+        if(daxTriggers.daxMoves == true)
+        {
+            daxTriggers.daxMoves = false;
+            daxDay1Bar.SetActive(true);
+            
+        }
+    }
 
     public void DaxsLocation(string location)
     {

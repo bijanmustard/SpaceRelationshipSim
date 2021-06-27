@@ -1560,7 +1560,6 @@ GameObject:
   - component: {fileID: 68718017159953596}
   - component: {fileID: 68718017159953597}
   - component: {fileID: 68718017159953598}
-  - component: {fileID: 68718017159953603}
   - component: {fileID: 68718017159953601}
   - component: {fileID: 68718017159953600}
   - component: {fileID: 68718017159953602}
@@ -1600,8 +1599,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9de4563b7dfb2d41b77a76744a2820b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dax_Character: {fileID: 6981512397608388952}
+  bryce_Character: {fileID: 6981512397608388953}
   dialogueScript: {fileID: 4900000, guid: a79e3ebba79cb2748900b5efbcb95c27, type: 3}
-  dax_Character: {fileID: 0}
 --- !u!58 &68718017159953602
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1618,19 +1618,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!114 &68718017159953603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68718017159953599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb2f2e7aaf784f044b6d2baeda7cfb39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  daxTriggers: {fileID: 6981512397608388938}
 --- !u!1 &452346178437937569
 GameObject:
   m_ObjectHideFlags: 0
@@ -3975,6 +3962,8 @@ GameObject:
   - component: {fileID: 6981512397608388936}
   - component: {fileID: 6981512397608388937}
   - component: {fileID: 6981512397608388938}
+  - component: {fileID: 6981512397608388952}
+  - component: {fileID: 6981512397608388953}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -3982,6 +3971,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6981512397608388952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6981512397608388951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2f2e7aaf784f044b6d2baeda7cfb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  daxTriggers: {fileID: 6981512397608388938}
+--- !u!114 &6981512397608388953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6981512397608388951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd3c14bc98bc60f4d91165c665db5eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bryceTriggers: {fileID: 0}
 --- !u!1 &6981512398093252547
 GameObject:
   m_ObjectHideFlags: 0
