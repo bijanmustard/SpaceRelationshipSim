@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c43f84eae662eb54e873abfb74039aa5, type: 3}
-  m_Name: DIASPR_Dax
+  m_Name: DiASPR_Bryce
   m_EditorClassIdentifier: 
   expressions:
-  - {fileID: 21300000, guid: 77ab86d3b0d756545ba77c2397af0b9e, type: 3}
-  - {fileID: 21300000, guid: fc624f43df6ecdc408990bcdaf161bb2, type: 3}
-  - {fileID: 21300000, guid: 0da06dac7bf802749a934285f25e38e0, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 95f284d52732a8044bdbc1b9a1dba48e, type: 3}
+  - {fileID: 21300000, guid: ad37082d5fd8e9e4494c9eb8e9af5947, type: 3}
+  - {fileID: 21300000, guid: 0c7879547fc9d4840a1d3ece207e0ce5, type: 3}
+  - {fileID: 21300000, guid: b62b8247315c0164da3c9e7772402e9e, type: 3}
