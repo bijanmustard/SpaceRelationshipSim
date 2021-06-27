@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Dax_Character : MonoBehaviour
 {
@@ -15,12 +16,10 @@ public class Dax_Character : MonoBehaviour
 
     public void DaxsMovesDay1()
     {
-        if(daxTriggers.daxMoves == true)
-        {
-            daxTriggers.daxMoves = false;
-            daxDay1Bar.SetActive(true);
-            
-        }
+        //GameObject dax;
+        SceneManager.LoadScene("Bar",LoadSceneMode.Additive);
+
+        //SceneManager.MoveGameObjectToScene()
     }
 
     public void DaxsLocation(string location)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bryce_Character : MonoBehaviour
 {
-    public EventTriggers bryceTriggers = GameObject.Find("Game Manager").GetComponent<EventTriggers>();
+    public EventTriggers bryceTriggers;
 
     // No Day 1
 
