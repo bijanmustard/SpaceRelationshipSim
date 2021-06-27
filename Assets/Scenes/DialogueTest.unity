@@ -233,10 +233,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1442728423}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d073dff4cc83e141b9f2ae3953c78ec, type: 3}
+  m_Script: {fileID: 11500000, guid: e9de4563b7dfb2d41b77a76744a2820b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueScript: {fileID: 4900000, guid: 6cfadef0f4b342146885782b63d4bfc1, type: 3}
+  dax_Character: {fileID: 0}
+  bryce_Character: {fileID: 0}
+  dialogueScript: {fileID: 0}
 --- !u!4 &1442728425
 Transform:
   m_ObjectHideFlags: 0
