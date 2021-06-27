@@ -24,13 +24,11 @@ public class Scene_Transition : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-<<<<<<< Updated upstream
-            StartCoroutine(ChangeScene());
-=======
+
             Starting_Position_Value.initialValue = playerPosition;
             Starting_Position_Value.transitionNumber += 1;
             SceneController.Instance.GoToScene(sceneToLoad);
->>>>>>> Stashed changes
+
         }
     }
 
@@ -54,10 +52,6 @@ public class Scene_Transition : MonoBehaviour
         SceneManager.MoveGameObjectToScene(moveGameManager, nextScene);
 
         yield return null;
-
-        
-
-
 
         SceneManager.UnloadSceneAsync(currentScene);
 
