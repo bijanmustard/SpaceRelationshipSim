@@ -23,6 +23,12 @@ public class NPC_Interaction : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        Game_Manager = GameObject.FindObjectOfType<Game_Manager>().GetComponent<Game_Manager>();
+        dCanvas = GameObject.FindObjectOfType<DialogueCanvas>().GetComponent<DialogueCanvas>(); ;
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
