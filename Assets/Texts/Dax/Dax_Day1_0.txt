@@ -4,14 +4,52 @@ Hello little eclipse, you seem to be lost.
 ==================================================================
 The ISS is quite vast! Come, I shall accompany you there!
 <&e5>
-<&x>
+<&w>
 =================================================================
 <&d0>
 So forward! Come and join me at the bar! I shall buy you a drink.
 <&e5>
-<&x>
+<&w>
 =================================================================
 <&d2>
 With how things are going in the war, I may very well permanently eclipse soon.
+<&w>
+=================================================================
+Hey Tapper. Two Big Bangs, on the rocks for my friend and I.
+<&w>
+<&tTapper>
+((wait for one second))
+Here ya go, Dax. Don’t drink ‘em too fast!
+<&w>
+<&tDax>
+No guarantees. They weren’t for my kids.
+<&x><&tDax>
+This war has taken much from all of us. Our dear bartender lost their offspring last week. 
+I must ensure I’m deployed in a different sector in tomorrow’s battle.
+{<0Do you work in military IT?>;<1Can I be deployed in your sector?>;<2The bartender’s your enemy! Kill them here!>}
+=================================================
+Yep, graduated from Drury’s Space Academy’s IT program.
+<&e3>
+=================================================
+Yes if that’s an innuendo, no if you mean the battlefield.
+<&e3>
+==================================================
+<&d2>
+You must be an offspring of those who started this war. I don’t think we have anything left to talk about here.
+
+=================================================================
+If you’d like I could teach you the basics of manipulating warp drives. They allow accurate and safe relocation of your coordinate to any location you desire within 500 solar systems!
+{<4You had me at “If”>;<5Anywhere my coordinate can intersect with your coordinate would be most desirable. *wink*>;<6Pssh, only 500 solar systems? Ever hear of hyper drives?>}
+============================================================
+My basic equipment is back in my room, let us not waste another second!
+<&e7>
+<&x>
+========================================================
+That could either be potentially fatal... or really hot. Let us find out!
+<&e7>
+<&x>
+=========================================================
+Hyper drives are entirely too energy inefficient and much riskier for warping. I shall explain in greater detail in my room!
+<&e7>
 <&x>
 
