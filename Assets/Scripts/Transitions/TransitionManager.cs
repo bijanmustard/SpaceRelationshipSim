@@ -23,11 +23,11 @@ public class TransitionManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null && instance != this) Destroy(gameObject);
+        if (instance != null && instance != this) Destroy(transform.parent.gameObject);
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(transform.parent.gameObject);
         }
 
         //Set order of transitions before making array
