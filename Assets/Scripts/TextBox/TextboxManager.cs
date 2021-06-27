@@ -66,6 +66,8 @@ public class TextboxManager : MonoBehaviour
     protected bool waitForOption = false;
 
     protected int linePointer = 0;
+
+    protected Action exitEvent;
     
 
 
@@ -144,7 +146,7 @@ public class TextboxManager : MonoBehaviour
     }
 
 
-    //<><> EVENT FUNCTIONS <><>
+    //<><> EVENT FUNCTIONS <><>{}
 
     // SetLine is called by events to set the linePointer.
     public void SetLine(int line)
@@ -152,12 +154,16 @@ public class TextboxManager : MonoBehaviour
         linePointer = Mathf.Clamp(line-1, 0, lines.Length);
     }
 
+    // SetExitEvent sets a delgate function to be called upon exiting the dialogue event.
+    public void SetExitEvent(Action a)
+    {
+        exitEvent = a;
+    }
+
     // EndOption is called in Dialogue to end the optionWait bool
     public void EndOptionWait() { waitForOption = false;}
 
     //<><><><><><><><><><><><><>
-
-
 
 
     //CheckOptions checks if the input line is an options line. Displays options if true.
@@ -435,8 +441,16 @@ public class TextboxManager : MonoBehaviour
         ToggleTextbox(false);
         //3. Disable dialogue canvas if applicable
         if (dCanvas.isCanvas) dCanvas.DisableCanvas();
-        //4. unlock player movement
+        //4. if exit event exits, call exit event
+        if (exitEvent != null)
+        {
+            exitEvent.Invoke();
+            exitEvent = null;
+        }
+        //5. unlock player movement
         if(playerMove != null) playerMove.ToggleMove(true);
+        
+        
         
     }
 }
