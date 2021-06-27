@@ -46,7 +46,7 @@ public class TextboxManager : MonoBehaviour
     public AudioClip charSound;
 
     //Button actions
-    int[] buttActs = new int[4];
+    public int[] buttActs = new int[4];
 
     public Coroutine runIE;
     protected bool isRunning = false;
@@ -82,7 +82,6 @@ public class TextboxManager : MonoBehaviour
         texts = box.GetComponentsInChildren<Text>();
         breakImg = box.transform.Find("Break").gameObject;
         buttons = transform.Find("Buttons").GetComponentsInChildren<Button>();
-        buttons[0].onClick.AddListener(delegate { TriggerDEvent(0); });
         dCanvas = FindObjectOfType<DialogueCanvas>();
         playerMove = FindObjectOfType<Player_Movement>();
         audio = GetComponent<AudioSource>();
