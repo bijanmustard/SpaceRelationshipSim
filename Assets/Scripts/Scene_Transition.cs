@@ -32,34 +32,5 @@ public class Scene_Transition : MonoBehaviour
         }
     }
 
-    IEnumerator ChangeScene()
-    {
-        Starting_Position_Value.initialValue = playerPosition;
-        Starting_Position_Value.transitionNumber += 1;
-
-        //Scene thisScene = SceneManager.GetActiveScene();
-
-
-        //Scene loadingScene = SceneManager.GetSceneByName(sceneToLoad);
-        //Debug.Log(loadingScene.ToString());
-
-
-        SceneManager.LoadScene(nextSceneIndex, LoadSceneMode.Additive);
-
-        Scene nextScene = SceneManager.GetSceneByName(sceneToLoad);
-
-        SceneManager.MoveGameObjectToScene(moveCanvas, nextScene);
-        SceneManager.MoveGameObjectToScene(moveGameManager, nextScene);
-
-        yield return null;
-
-        SceneManager.UnloadSceneAsync(currentScene);
-
-        
-
-        
-
-
-        
-    }
+    
 }

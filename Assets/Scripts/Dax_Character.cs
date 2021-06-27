@@ -11,9 +11,10 @@ public class Dax_Character : MonoBehaviour
     // Day one Functions
 
 
-    public string DaxsLocation()
+    public void DaxsLocation(string location)
     {
-        return daxTriggers.daxMovesScene;
+        daxTriggers.daxMovesScene = location;
+        daxTriggers.daxMoves = true;
     }
 
 

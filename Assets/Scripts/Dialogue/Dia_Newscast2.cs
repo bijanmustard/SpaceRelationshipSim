@@ -17,5 +17,10 @@ public class Dia_Newscast2 : Dialogue
     {
         TextboxManager.Instance.SetLine(20);
     }
+
+    protected override void DEvent2()
+    {
+        TextboxManager.Instance.SetExitEvent(delegate { SceneController.Instance.GoToScene("Bar"); });
+    }
 }
 

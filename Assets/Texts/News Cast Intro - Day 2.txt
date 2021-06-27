@@ -18,4 +18,5 @@ In a grueling battle between Sector X and Y, very little progress was made today
 <&e1>
 =======================================================================
 That is all for our morning report. Stay bright and vigilant!
+<&e2>
 <&x>
