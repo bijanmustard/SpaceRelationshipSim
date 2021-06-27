@@ -25,7 +25,7 @@ public abstract class Dialogue : MonoBehaviour
     private void Awake()
     {
         //1. Set text asset
-        dialogueScript = Resources.Load<TextAsset>(string.Format("Texts/{0}.txt", filename));
+        //dialogueScript = Resources.Load<TextAsset>(string.Format("Texts/{0}.txt", filename));
     }
 
     //Event Caller

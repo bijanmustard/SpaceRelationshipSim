@@ -34,7 +34,8 @@ public class Dax_Day1_0 : Dialogue
     //Queue bar transition
     protected override void DEvent5()
     {
-        TextboxManager.Instance.SetLine(18);
+        //TextboxManager.Instance.SetLine(18);
+        SceneController.Instance.GoToScene("TBC");
 
 
 
