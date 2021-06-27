@@ -112,7 +112,7 @@ public class Game_Manager : MonoBehaviour
         if(currentTimeLeft < 1)
         {
             currentTimeLeft = maxTimeLeft;
-            dayCount += 1;
+            
             day.sprite = daySprites[dayCount];
         }
 
@@ -124,7 +124,9 @@ public class Game_Manager : MonoBehaviour
 
     public void EndDay()
     {
-
+        dayCount += 1;
+        SceneController.Instance.GoToScene("TelevisionReport");
+        
     }
 
     

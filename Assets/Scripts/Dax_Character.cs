@@ -11,15 +11,9 @@ public class Dax_Character : MonoBehaviour
     // Day one Functions
 
 
-    public void DaxMoveScene()
+    public string DaxsLocation()
     {
-        if(daxTriggers.daxMovesToBarDay1 == true)
-        {
-            daxTriggers.daxMovesToBarDay1 = false;
-            // Transition to Bar
-
-
-        }
+        return daxTriggers.daxMovesScene;
     }
 
 
